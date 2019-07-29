@@ -1,6 +1,5 @@
 package pl.coderslab.app.homePage;
 
-import org.springframework.http.HttpRequest;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,7 +9,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import pl.coderslab.app.user.User;
 import pl.coderslab.app.user.UserRepository;
-import pl.coderslab.app.user.UserRole;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.HashSet;
@@ -47,16 +45,6 @@ public class HomePageController {
 
     @PostMapping ("/myregistration")
     public String processRegister(@ModelAttribute User user){
-
-      UserRole userRole = new UserRole();
-      userRole.setRole("ADMIN");
-      Set<UserRole> roles = new HashSet<UserRole>();
-      roles.add(userRole);
-      user.setRoles(roles);
-      String password  = user.getPassword();
-      String encryptedPassword = passwordEncoder.encode(password);
-      user.setPassword(encryptedPassword);
-        userRepository.save(user);
         return "redirect:/mylogin";
     }
 

@@ -16,12 +16,6 @@ import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
-    private UserDetailsService userDetailsService;
-
-    @Bean
-    public BCryptPasswordEncoder encoderPWD(){
-        return  new BCryptPasswordEncoder();
-    }
 
 
 

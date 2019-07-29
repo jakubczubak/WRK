@@ -3,6 +3,7 @@ package pl.coderslab.app.user;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import pl.coderslab.app.role.Role;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -21,21 +22,7 @@ public class User {
     private String email;
     @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
     @JoinTable(name = "user_role",joinColumns = @JoinColumn(name = "user_id"),inverseJoinColumns =@JoinColumn(name = "role_id"))
-    private Set<UserRole> roles;
+    private Set<Role> roles;
 
-    public Set<UserRole> getRoles() {
-        return roles;
-    }
 
-    public void setRoles(Set<UserRole> roles) {
-        this.roles = roles;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
 }
