@@ -6,12 +6,10 @@ import lombok.Setter;
 import pl.coderslab.app.role.Role;
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.Set;
 
 @Entity
-@Getter
-@Setter
-@NoArgsConstructor
 @Table(name = "users")
 public class User {
     @Id
@@ -19,10 +17,10 @@ public class User {
     private Long id;
     private String username;
     private String password;
-    private String email;
-    @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
-    @JoinTable(name = "user_role",joinColumns = @JoinColumn(name = "user_id"),inverseJoinColumns =@JoinColumn(name = "role_id"))
-    private Set<Role> roles;
+    private int enabled;
+    @OneToMany(cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
+    @JoinTable
+    private List<Role> role;
 
 
 }

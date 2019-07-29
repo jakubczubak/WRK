@@ -10,7 +10,7 @@ public class UserController {
 
     UserRepository userRepository;
 
-    public String UserController(Model model){
+    public String UserController(Model model) {
         model.addAttribute("user", new User());
         return "registration";
 

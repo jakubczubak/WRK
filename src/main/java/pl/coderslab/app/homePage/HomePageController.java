@@ -11,8 +11,7 @@ import pl.coderslab.app.user.User;
 import pl.coderslab.app.user.UserRepository;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.HashSet;
-import java.util.Set;
+
 
 @Controller
 public class HomePageController {
@@ -20,37 +19,33 @@ public class HomePageController {
     private UserRepository userRepository;
     private BCryptPasswordEncoder passwordEncoder;
 
-    public HomePageController(UserRepository userRepository, BCryptPasswordEncoder passwordEncoder){
-        this.userRepository=userRepository;
-        this.passwordEncoder=passwordEncoder;
+    public HomePageController(UserRepository userRepository, BCryptPasswordEncoder passwordEncoder) {
+        this.userRepository = userRepository;
+        this.passwordEncoder = passwordEncoder;
     }
 
     @RequestMapping("/")
     public String hello(Model model, HttpServletRequest request) {
-        model.addAttribute("user",request.getRemoteUser());
+        model.addAttribute("user", request.getRemoteUser());
 
         return "index";
     }
 
     @GetMapping("/mylogin")
-    public String login(Model model){
+    public String login(Model model) {
         return "login";
     }
 
     @GetMapping("/myregistration")
-    public String register(Model model){
+    public String register(Model model) {
         model.addAttribute("user", new User());
         return "registration";
     }
 
-    @PostMapping ("/myregistration")
-    public String processRegister(@ModelAttribute User user){
+    @PostMapping("/myregistration")
+    public String processRegister(@ModelAttribute User user) {
         return "redirect:/mylogin";
     }
-
-
-
-
 
 
 }
