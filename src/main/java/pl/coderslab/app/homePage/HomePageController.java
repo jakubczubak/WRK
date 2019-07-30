@@ -3,12 +3,12 @@ package pl.coderslab.app.homePage;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.*;
 import pl.coderslab.app.user.User;
 import pl.coderslab.app.user.UserRepository;
+import pl.coderslab.app.user.UserService;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -17,11 +17,11 @@ import javax.servlet.http.HttpServletRequest;
 public class HomePageController {
 
     private UserRepository userRepository;
-    private BCryptPasswordEncoder passwordEncoder;
+    private UserService userService;
 
-    public HomePageController(UserRepository userRepository, BCryptPasswordEncoder passwordEncoder) {
+    public HomePageController(UserRepository userRepository,UserService userService) {
         this.userRepository = userRepository;
-        this.passwordEncoder = passwordEncoder;
+        this.userService=userService;
     }
 
     @RequestMapping("/")
@@ -32,19 +32,34 @@ public class HomePageController {
     }
 
     @GetMapping("/mylogin")
-    public String login(Model model) {
+    public String getLogin(Model model, @RequestParam(required = false) String username) {
+        if(username!=null){
+            model.addAttribute("username",username);
+        }
         return "login";
     }
 
     @GetMapping("/myregistration")
-    public String register(Model model) {
+    public String registration(Model model) {
         model.addAttribute("user", new User());
         return "registration";
     }
 
     @PostMapping("/myregistration")
-    public String processRegister(@ModelAttribute User user) {
-        return "redirect:/mylogin";
+    public String createNewUser(Model model,@ModelAttribute @Validated User user, BindingResult result) {
+        User userExist = userRepository.findByEmail(user.getEmail());
+        if(userExist!=null){
+            result
+                    .rejectValue("email", "error.user",
+                            "There is already a user registered with the email provided");
+        }
+        if(result.hasErrors()){
+            return "registration";
+        }else {
+            userService.saveUser(user);
+        }
+        model.addAttribute("username",user.getFirstName());
+        return "redirect:/mylogin?success";
     }
 
 

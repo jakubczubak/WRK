@@ -50,11 +50,7 @@ public class AppConfig extends WebMvcConfigurerAdapter {
     }
 
 
-    @Bean
-    public BCryptPasswordEncoder passwordEncoder() {
-        BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
-        return bCryptPasswordEncoder;
-    }
+
 
 
     public void addResourceHandlers(final ResourceHandlerRegistry registry) {

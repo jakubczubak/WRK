@@ -32,6 +32,14 @@
 
     </div>
     </c:if>
+    <c:if test="${param.success != null}">
+
+        </div>  <div class="alert alert-success" role="alert">
+
+        Hello ${username}!
+
+    </div>
+    </c:if>
     <h1><p class="text-success">Log in</p></h1><div class="form-group">
             <label for="exampleInputEmail1">Email</label>
             <input type="text"  name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="email">
