@@ -13,35 +13,43 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body class="d-flex justify-content-center">
-    <div class="container">
+    <div class="col-lg-3">
     <div style="margin-top: 150px">
     <form method="post" action="/mylogin">
+        <c:if test="${param.error != null}">
 
-        <div class="form-group">
-            <label for="exampleInputEmail1">Username</label>
-            <input type="text"  name="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Username">
+    </div>  <div class="alert alert-danger" role="alert">
+
+        Incorrect username or password!
+
+    </div>
+        </c:if>
+        <c:if test="${param.logout != null}">
+
+    </div>  <div class="alert alert-success" role="alert">
+
+        You are logged out.
+
+    </div>
+    </c:if>
+    <h1><p class="text-success">Log in</p></h1><div class="form-group">
+            <label for="exampleInputEmail1">Email</label>
+            <input type="text"  name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="email">
             <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
         </div>
         <div class="form-group">
             <label for="exampleInputPassword1">Password</label>
             <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-        </div>  <div class="alert alert-danger" role="alert">
-        <c:if test="${param.error != null}">
-            Incorrect username or password!
-        </c:if>
-    </div>
-        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
-        <div class="form-check">
-            <input type="checkbox" name="rememberMe" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">Remember Me ;)</label>
-        </div>
-        <button type="submit" class="btn btn btn-primary btn-block">Login</button>
-        <p> </p>
-        <div class="mx-auto" style="width: 200px;">
-            <p class="text-dark">Don't have an account yet?</p>
-        </div>
 
-        <button type="submit" class="btn btn-success btn-block">Register</button>
+        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
+        <div style="margin-top: 10px"  class="form-check">
+            <input type="checkbox" name="rememberMe" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Remember me</label>
+        </div>
+        <button style="margin-top: 10px" type="submit" class="btn btn btn-primary btn-block">Login</button>
+            <a href="/myregistration"> <button style="margin-top: 15px;"     type="button" class="btn btn-success btn-block">Register</button>   </a>
+      
+
     </form>
     </div>
     </div>

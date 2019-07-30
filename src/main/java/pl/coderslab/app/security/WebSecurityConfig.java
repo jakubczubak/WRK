@@ -22,8 +22,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .authenticated()
                 .and()
                 .formLogin().loginPage("/mylogin").permitAll()
+                .passwordParameter("password")
+                .usernameParameter("email")
                 .and()
                 .httpBasic()
+                .and()
+                .logout().logoutSuccessUrl("/mylogin?logout").permitAll()
                 .and()
                 .rememberMe().key("secret-key").rememberMeParameter("rememberMe").tokenValiditySeconds(3600);
     }
@@ -46,9 +50,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .jdbcAuthentication()
                 .dataSource(dataSource())
                 .usersByUsernameQuery(
-                        "select username,password, enabled from users where username=?")
+                        "select email, password, active from users where email=?")
                 .authoritiesByUsernameQuery(
-                        "select username, role from roles where username=?");
+                        "select u.email, r.role from users u inner join user_role ur on(u.id=ur.user_id) inner join roles r on(ur.role_id=r.id) where u.email=?");
     }
 
 

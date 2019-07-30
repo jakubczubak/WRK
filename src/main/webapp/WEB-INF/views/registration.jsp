@@ -9,21 +9,46 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>WRK Brakes</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
 </head>
-<body>
-welcome to registration page!
+<body class="d-flex justify-content-center">
+<div class="col-lg-2">
+<div style="margin-top: 150px">
+<form:form method="post" action="/myregistration" modelAttribute="user">
+<h1><p class="text-success">Registration</p></h1>
+    <div class="form-group">
+    <label for="exampleInputEmail1">Email</label>
+    <form:input path="email" type="text" name="email" class="form-control" id="exampleInputEmail1"
+                aria-describedby="emailHelp" placeholder="Email"/>
+        <form:errors path="email" cssClass="error" element="div"/>
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+        <div class="form-group">
+        <label for="exampleInputFirstName">First Name</label>
+        <form:input path="firstName" type="text" name="firstName" class="form-control" id="exampleInputFirstName"
+                    aria-describedby="emailHelp" placeholder="First name"/>
+            <form:errors path="firstName" cssClass="error" element="div"/>
+            </div>
+            <div class="form-group">
+            <label for="exampleInputLastName">Last Name</label>
+            <form:input path="lastName" type="text" name="lastName" class="form-control" id="exampleInputLastName"
+                        aria-describedby="emailHelp" placeholder="Last Name"/>
+                <form:errors path="lastName" cssClass="error" element="div"/>
+                </div>
+                <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <form:input path="password" type="password" name="password" class="form-control"
+                            id="exampleInputPassword1" placeholder="Password"/>
+                    <form:errors path="password" cssClass="error" element="div"/>
+                    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
 
-<form:form method="post"
-           modelAttribute="user">
+                    <button style="margin-top: 10px" type="submit" class="btn btn btn-primary btn-block">Submit</button>
+                </div>
+</form:form>
+                    </div>
 
-    User name<form:input path="username"  /><br>
-    <form:errors path="username" cssClass="error" element="div" />
-   Password <form:input path="password"  /><br>
-    <form:errors path="password" cssClass="error" element="div" />
-   email <form:input path="email"  /><br>
-    <form:errors path="email" cssClass="error" element="div" />
-    <form:hidden path="id" /><br>
-    <button type="submit" class="btn btn-success">zarejestruj</button></form:form>
-</body>
-</html>
+</div>
+                    </body>
+                    </html>

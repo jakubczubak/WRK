@@ -1,9 +1,11 @@
-insert into WRK.roles (role, username) value ("ADMIN","kuba");
-insert into WRK.roles (role, username) value ("USER","kazik");
+insert into WRK.roles (role) value ("ADMIN");
+insert into WRK.roles (role) value ("USER");
 
 
 
 
-insert into WRK.users (enabled, password, username) VALUE ("1","{noop}admin","kuba");
-insert into WRK.users (enabled, password, username) VALUE ("1","{noop}admin","kazik");
+insert into WRK.users (email, password, active) VALUE ("czubakjakub94@gmail.com","{noop}admin","1");
 
+
+
+insert into WRK.user_role(user_id, role_id) VALUE (1,1);
