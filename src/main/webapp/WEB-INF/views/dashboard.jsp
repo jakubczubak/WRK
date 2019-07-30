@@ -32,12 +32,12 @@
     <!-- Sidebar -->
     <ul class="sidebar navbar-nav">
       <li class="nav-item">
-        <span class="nav-link">MENU</span>
+        <span class="nav-link">MENU:</span>
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#" id="pagesDropdown" role="button">
-          <span>Pages</span>
+        <a class="nav-link" href="/user/"role="button">
+          <span>-My Account</span>
         </a>
       </li>
     </ul>
@@ -121,10 +121,6 @@
             </div>
           </div>
         </div>
-
-
-
-
 
       <!-- Sticky Footer -->
       <footer class="sticky-footer">

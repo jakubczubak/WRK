@@ -40,7 +40,8 @@
 
     </div>
     </c:if>
-    <h1><p class="text-success">Log in</p></h1><div class="form-group">
+    <h1><p class="text-success">Log in</p></h1>
+    <div class="form-group">
             <label for="exampleInputEmail1">Email</label>
             <input type="text"  name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="email">
             <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
