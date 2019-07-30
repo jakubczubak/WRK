@@ -1,6 +1,5 @@
 package pl.coderslab.app.homePage;
 
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -28,7 +27,7 @@ public class HomePageController {
     public String hello(Model model, HttpServletRequest request) {
         model.addAttribute("user", request.getRemoteUser());
 
-        return "index";
+        return "dashboard";
     }
 
     @GetMapping("/mylogin")
@@ -61,6 +60,8 @@ public class HomePageController {
         model.addAttribute("username",user.getFirstName());
         return "redirect:/mylogin?success";
     }
+
+
 
 
 }

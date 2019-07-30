@@ -29,7 +29,7 @@ public class User {
     @NotEmpty
     private String password;
     private int active;
-    @OneToMany(cascade = CascadeType.REMOVE)
+    @ManyToMany(cascade = CascadeType.REMOVE)
     @JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Set<Role> role;
 
