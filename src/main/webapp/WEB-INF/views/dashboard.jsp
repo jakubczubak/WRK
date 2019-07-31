@@ -36,7 +36,7 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/user/"role="button">
+        <a class="nav-link" href="/user/edit"role="button">
           <span>-My Account</span>
         </a>
       </li>

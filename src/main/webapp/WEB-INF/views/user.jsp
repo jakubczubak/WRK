@@ -45,36 +45,45 @@
 
 
 
-    <div class="container margin my-4">
+    <div class="container margin my-4" >
+
       <h1><p class="text-success">Edit Profile  <i class="fas fa-address-card"></i></p></h1>
-<form method="post" action="/myregistration" modelAttribute="user">
+<form:form method="post" action="/user/edit" modelAttribute="user">
+    <c:if test="${param.success != null}">
+
+
+        <div class="alert alert-success" role="alert">
+
+            Success!
+
+        </div>
+    </c:if>
   <div class="form-group">
     <label for="exampleInputFirstName">First Name:</label>
-  <input path="firstName" type="text" name="firstName" class="form-control" id="exampleInputFirstName"
+  <form:input path="firstName" type="text" name="firstName" class="form-control" id="exampleInputFirstName"
                 aria-describedby="emailHelp" placeholder="First name"/>
-    <errors path="firstName" cssClass="error" element="div"/>
+    <form:errors path="firstName" cssClass="error" element="div"/>
   </div>
   <div class="form-group">
     <label for="exampleInputLastName">Last Name:</label>
-    <input path="firstName" type="text" name="firstName" class="form-control" id="exampleInputLastName"
+    <form:input path="lastName" type="text" name="lastName" class="form-control" id="exampleInputLastName"
            aria-describedby="emailHelp" placeholder="Last name"/>
-    <errors path="firstName" cssClass="error" element="div"/>
+    <form:errors path="firstName" cssClass="error" element="div"/>
   </div>
   <div class="form-group">
     <label for="exampleInputEmail">Contact e-mail:</label>
-    <input path="firstName" type="text" name="firstName" class="form-control" id="exampleInputEmail"
+    <form:input path="email" readonly="true" type="text" name="email" class="form-control" id="exampleInputEmail"
            aria-describedby="emailHelp" placeholder="E-mail"/>
-    <errors path="firstName" cssClass="error" element="div"/>
   </div>
   <div class="form-group">
     <label for="exampleInputEmail">Password:</label>
-    <input path="firstName" type="text" name="firstName" class="form-control" id="exampleInputEmail"
+    <form:input path="password"  type="password" name="password" class="form-control"  id="exampleInputEmail"
            aria-describedby="emailHelp" placeholder="Password"/>
-    <errors path="firstName" cssClass="error" element="div"/>
+    <form:errors path="firstName" cssClass="error" element="div"/>
+    <form:hidden path="id" /><br>
     <button type="submit" class="btn btn-block btn-primary my-4">Save changes!</button>
   </div>
-</form>
-      <button type="submit" class="btn btn-block btn-danger my-4">Remove Account</button>
+</form:form>
 
     </div>
 

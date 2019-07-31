@@ -47,11 +47,11 @@ public class HomePageController {
     @PostMapping("/myregistration")
     public String createNewUser(Model model,@ModelAttribute @Validated User user, BindingResult result) {
         User userExist = userRepository.findByEmail(user.getEmail());
-        if(userExist!=null){
-            result
-                    .rejectValue("email", "error.user",
-                            "There is already a user registered with the email provided");
-        }
+//        if(userExist!=null){
+//            result
+//                    .rejectValue("email", "error.user",
+//                            "There is already a user registered with the email provided");
+//        }
         if(result.hasErrors()){
             return "registration";
         }else {

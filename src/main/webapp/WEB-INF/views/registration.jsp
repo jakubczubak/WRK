@@ -13,12 +13,14 @@
     <title>WRK Brakes</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href='<c:url value="/resources/css/style.css"/>' rel="stylesheet" type="text/css">
+    <script src="https://kit.fontawesome.com/c395dd8104.js"></script>
+
 </head>
 <body class="d-flex justify-content-center">
 <div class="col-lg-2">
 <div style="margin-top: 150px">
 <form:form method="post" action="/myregistration" modelAttribute="user">
-<h1><p class="text-success">Registration</p></h1>
+<h1><p class="text-success">Registration <i class="fas fa-address-card"></i></p></h1>
     <div class="form-group">
     <label for="exampleInputEmail1">Email</label>
     <form:input path="email" type="text" name="email" class="form-control" id="exampleInputEmail1"
