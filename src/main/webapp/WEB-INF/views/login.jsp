@@ -62,8 +62,8 @@
             <label class="form-check-label" for="exampleCheck1">Remember me</label>
         </div>
         <button style="margin-top: 10px" type="submit" class="btn btn btn-primary btn-block">Login</button>
-            <a href="/myregistration"> <button style="margin-top: 15px;"     type="button" class="btn btn-success btn-block">Register</button>   </a>
-      
+            <a class="btn btn-success btn-block" href="/myregistration">Register!</a>
+
 
     </form>
     </div>
