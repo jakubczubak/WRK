@@ -40,11 +40,11 @@
         <a class="nav-link" href="/user/edit"role="button">
           <span>-My Account</span>
         </a>
+      </li>
       <li class="nav-item">
         <a class="nav-link" href="/part/add"role="button">
           <span>-Parts</span>
         </a>
-      </li>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="/part/all"role="button">
@@ -57,47 +57,52 @@
 
     <div class="container margin my-4" >
 
-      <h1><p class="text-success">Edit Profile  <i class="fas fa-address-card"></i></p></h1>
-<form:form method="post" action="/user/edit" modelAttribute="user">
-    <c:if test="${param.success != null}">
+      <h1><p class="text-success">Add Part  <i class="fas fa-wrench"></i></p></h1>
+      <form:form method="post" modelAttribute="part">
+        <c:if test="${param.success != null}">
 
 
-        <div class="alert alert-success" role="alert">
+          <div class="alert alert-success" role="alert">
 
             Success!
 
+          </div>
+        </c:if>
+        <div class="form-group">
+          <label for="exampleInputTypeOfPart">Type of part:</label>
+          <form:input path="type" type="text" name="type" class="form-control" id="exampleInputTypeOfPart"
+                      aria-describedby="emailHelp" placeholder="e.g screw"/>
+          <form:errors path="type" cssClass="error" element="div"/>
         </div>
-    </c:if>
-  <div class="form-group">
-    <label for="exampleInputFirstName">First Name:</label>
-  <form:input path="firstName" type="text" name="firstName" class="form-control" id="exampleInputFirstName"
-                aria-describedby="emailHelp" placeholder="First name"/>
-    <form:errors path="firstName" cssClass="error" element="div"/>
-  </div>
-  <div class="form-group">
-    <label for="exampleInputLastName">Last Name:</label>
-    <form:input path="lastName" type="text" name="lastName" class="form-control" id="exampleInputLastName"
-           aria-describedby="emailHelp" placeholder="Last name"/>
-    <form:errors path="firstName" cssClass="error" element="div"/>
-  </div>
-  <div class="form-group">
-    <label for="exampleInputEmail">Contact e-mail:</label>
-    <form:input path="email" readonly="true" type="text" name="email" class="form-control" id="exampleInputEmail"
-           aria-describedby="emailHelp" placeholder="E-mail"/>
-  </div>
-  <div class="form-group">
-    <label for="exampleInputEmail">Password:</label>
-    <form:input path="password"  type="password" name="password" class="form-control"  id="exampleInputEmail"
-           aria-describedby="emailHelp" placeholder="Password"/>
-    <form:errors path="firstName" cssClass="error" element="div"/>
-    <form:hidden path="id" /><br>
-    <button type="submit" class="btn btn-block btn-primary my-4">Save changes!</button>
-  </div>
-</form:form>
+        <div class="form-group">
+          <label for="exampleInputPartName">Name of part:</label>
+          <form:input path="name" type="text" name="name" class="form-control" id="exampleInputPartName"
+                      aria-describedby="emailHelp" placeholder="e.g M10x1.25x80"/>
+          <form:errors path="name" cssClass="error" element="div"/>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPartName">Quantity:</label>
+          <form:input path="quantity" type="text" name="quantity" class="form-control" id="exampleInputPartName"
+                      aria-describedby="emailHelp" placeholder="e.g 10x"/>
+            <form:errors path="quantity" cssClass="error" element="div"/>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail">Catalog Number:</label>
+          <form:input path="catalogNumber" type="text" name="catalogNumber" class="form-control" id="exampleInputEmail"
+           placeholder ="Fabory 45205.040.010"/>
+          <form:errors path="catalogNumber" cssClass="error" element="div"/>
+        </div>
+        <div class="form-group">
+          <form:hidden path="id" /><br>
+          <button type="submit" class="btn btn-block btn-primary my-4">Add part!</button>
+        </div>
+      </form:form>
 
     </div>
 
-      <!-- Sticky Footer -->
+
+
+    <!-- Sticky Footer -->
       <footer class="sticky-footer">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">

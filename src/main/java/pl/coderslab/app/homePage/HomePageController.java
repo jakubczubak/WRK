@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 
 
 @Controller
+@SessionAttributes("remoteUser")
 public class HomePageController {
 
     private UserRepository userRepository;
@@ -25,7 +26,7 @@ public class HomePageController {
 
     @RequestMapping("/")
     public String hello(Model model, HttpServletRequest request) {
-        model.addAttribute("user", request.getRemoteUser());
+        model.addAttribute("remoteUser", request.getRemoteUser());
 
         return "dashboard";
     }

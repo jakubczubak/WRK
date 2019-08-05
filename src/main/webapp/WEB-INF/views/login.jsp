@@ -14,7 +14,11 @@
 </head>
 <body class="d-flex justify-content-center">
     <div class="col-lg-3">
+
     <div style="margin-top: 150px">
+        <div style="margin-bottom: 40px" class="ml-xl-5">
+            <img src="http://wrkbrakes.com/wp-content/uploads/2018/02/WRK-LOGO2.png">
+        </div>
     <form method="post" action="/mylogin">
         <c:if test="${param.error != null}">
 
@@ -41,6 +45,7 @@
 
     </div>
     </c:if>
+
     <h1><p class="text-success">Log in  </p></h1>
     <div class="form-group">
             <label for="exampleInputEmail1">Email</label>

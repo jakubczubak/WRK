@@ -219,7 +219,7 @@ svg {
 }
 
 table {
-    border-collapse: collapse;
+    border-collapse:collapse;
 }
 
 caption {
@@ -10583,7 +10583,7 @@ body {
 #wrapper #content-wrapper {
     overflow-x: hidden;
     width: 100%;
-    padding-top: 1rem;
+    padding-top: 0rem;
     padding-bottom: 80px;
 }
 
@@ -10916,4 +10916,25 @@ body.sidebar-toggled footer.sticky-footer {
     body.sidebar-toggled footer.sticky-footer {
         width: calc(100% - 90px);
     }
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.margin-custom{
+    margin-left: -25px;
+    margin-bottom: 40px
+}
+
+
+.logo-wrk-dashboard{
+    height: 20px;
+    width: 40px;
+
+
+
 }

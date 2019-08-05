@@ -19,6 +19,10 @@
 <body class="d-flex justify-content-center">
 <div class="col-lg-2">
 <div style="margin-top: 150px">
+    <div style="margin-top: 150px">
+        <div class="margin-custom">
+            <img src="http://wrkbrakes.com/wp-content/uploads/2018/02/WRK-LOGO2.png">
+        </div>
 <form:form method="post" action="/myregistration" modelAttribute="user">
 <h1><p class="text-success">Registration <i class="fas fa-address-card"></i></p></h1>
     <div class="form-group">
