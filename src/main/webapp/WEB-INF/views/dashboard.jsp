@@ -52,6 +52,16 @@
           <span>-All Parts</span>
         </a>
       </li>
+      <li class="nav-item">
+      <a class="nav-link" href="/customer/add"role="button">
+        <span>-Customer</span>
+      </a>
+    </li>
+      <li class="nav-item">
+      <a class="nav-link" href="/customer/all"role="button">
+        <span>-All Customer</span>
+      </a>
+    </li>
     </ul>
 
     <div id="content-wrapper">

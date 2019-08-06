@@ -13,7 +13,6 @@ import java.util.Optional;
 
 @Controller
 @RequestMapping("/part")
-@SessionAttributes("remoteUser")
 public class PartController {
 
 
@@ -24,9 +23,8 @@ public class PartController {
     }
 
     @GetMapping(value = "/add")
-    public String addPart(Model model, HttpServletRequest request){
+    public String addPart(Model model){
         model.addAttribute("part", new Part());
-        model.addAttribute("remoteUser", request.getRemoteUser());
         return "part";
     }
 

@@ -15,6 +15,14 @@
   <!-- Custom styles for this template-->
   <link href='<c:url value="/resources/css/style.css"/>' rel="stylesheet" type="text/css">
   <script src="https://kit.fontawesome.com/c395dd8104.js"></script>
+
+  <script>
+    function confirmDelete(id, name) {
+      if (confirm("Do you really want to delete " + name + "?")) {
+        window.location.href = "/customer/delete/" + id;
+      }
+    }
+  </script>
 </head>
 
 <body id="page-top">
@@ -63,56 +71,44 @@
       </li>
     </ul>
 
+<div id="content-wrapper">
+  <table class="table table-striped table-dark">
+    <thead class="thead-dark">
+    <tr>
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">Phone Number</th>
+      <th scope="col">Email</th>
+      <th scope="col">NIP</th>
+      <th scope="col">PESEL</th>
+      <th scope="col">Delete/Edit</th>
+    </tr>
+    </thead>
+    <tbody>
+    <c:forEach var="customer" items="${customerList}">
+      <tr>
+          <%--<th scope="row">1</th>--%>
+        <td>${customer.firstName}</td>
+        <td>${customer.lastName}</td>
+        <td>${customer.phoneNumber}</td>
+        <td>${customer.email}</td>
+        <td>${customer.NIP}</td>
+        <td>${customer.PESEL}</td>
+
+            <td>
+          <a href="#" onclick="confirmDelete(${customer.id},'${customer.fullName}')"><button type="button" class="btn btn-danger">Delete</button></a>
+          <a href="/customer/edit/${customer.id}"><button type="button" class="btn btn-warning">Edit</button></a>
+        </td>
+      </tr>
+
+      </tr>
+    </c:forEach>
+    </tbody>
+  </table>
+</div>
 
 
-    <div class="container margin my-4" >
-
-      <h1><p class="text-success">Add Part  <i class="fas fa-wrench"></i></p></h1>
-      <form:form method="post" modelAttribute="part">
-        <c:if test="${param.success != null}">
-
-
-          <div class="alert alert-success" role="alert">
-
-            Success!
-
-          </div>
-        </c:if>
-        <div class="form-group">
-          <label for="exampleInputTypeOfPart">Type of part:</label>
-          <form:input path="type" type="text" name="type" class="form-control" id="exampleInputTypeOfPart"
-                      aria-describedby="emailHelp" placeholder="e.g screw"/>
-          <form:errors path="type" cssClass="error" element="div"/>
-        </div>
-        <div class="form-group">
-          <label for="exampleInputPartName">Name of part:</label>
-          <form:input path="name" type="text" name="name" class="form-control" id="exampleInputPartName"
-                      aria-describedby="emailHelp" placeholder="e.g M10x1.25x80"/>
-          <form:errors path="name" cssClass="error" element="div"/>
-        </div>
-        <div class="form-group">
-          <label for="exampleInputPartName">Quantity:</label>
-          <form:input path="quantity" type="text" name="quantity" class="form-control" id="exampleInputPartName"
-                      aria-describedby="emailHelp" placeholder="e.g 10x"/>
-            <form:errors path="quantity" cssClass="error" element="div"/>
-        </div>
-        <div class="form-group">
-          <label for="exampleInputEmail">Catalog Number:</label>
-          <form:input path="catalogNumber" type="text" name="catalogNumber" class="form-control" id="exampleInputEmail"
-           placeholder ="Fabory 45205.040.010"/>
-          <form:errors path="catalogNumber" cssClass="error" element="div"/>
-        </div>
-        <div class="form-group">
-          <form:hidden path="id" /><br>
-          <button type="submit" class="btn btn-block btn-primary my-4">Add part!</button>
-        </div>
-      </form:form>
-
-    </div>
-
-
-
-    <!-- Sticky Footer -->
+      <!-- Sticky Footer -->
       <footer class="sticky-footer">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">

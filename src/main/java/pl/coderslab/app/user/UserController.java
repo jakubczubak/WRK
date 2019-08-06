@@ -6,13 +6,11 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
-
-import javax.servlet.http.HttpServletRequest;
 import java.security.Principal;
 
 @Controller
 @RequestMapping("/user")
-@SessionAttributes("remoteUser")
+
 public class UserController {
 
     private UserService userService;
@@ -30,8 +28,7 @@ public class UserController {
 
 
     @GetMapping("/edit")
-    public String getUser(Model model, HttpServletRequest request, Principal principal){
-        model.addAttribute("remoteUser", request.getRemoteUser());
+    public String getUser(Model model,Principal principal){
         User user = userService.findUserByEmail(principal.getName());
         model.addAttribute("user", user);
         return "user";

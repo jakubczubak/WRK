@@ -67,8 +67,8 @@
 
     <div class="container margin my-4" >
 
-      <h1><p class="text-success">Add Part  <i class="fas fa-wrench"></i></p></h1>
-      <form:form method="post" modelAttribute="part">
+      <h1><p class="text-success">Add Customer  <i class="fas fa-user-plus"></i></p></h1>
+      <form:form method="post" modelAttribute="customer">
         <c:if test="${param.success != null}">
 
 
@@ -79,32 +79,44 @@
           </div>
         </c:if>
         <div class="form-group">
-          <label for="exampleInputTypeOfPart">Type of part:</label>
-          <form:input path="type" type="text" name="type" class="form-control" id="exampleInputTypeOfPart"
-                      aria-describedby="emailHelp" placeholder="e.g screw"/>
-          <form:errors path="type" cssClass="error" element="div"/>
+          <label for="exampleInputFirstName">First Name:</label>
+          <form:input path="firstName" type="text" name="firstName" class="form-control" id="exampleInputFirstName"
+                      aria-describedby="emailHelp" placeholder="First Name"/>
+          <form:errors path="firstName" cssClass="error" element="div"/>
         </div>
         <div class="form-group">
-          <label for="exampleInputPartName">Name of part:</label>
-          <form:input path="name" type="text" name="name" class="form-control" id="exampleInputPartName"
-                      aria-describedby="emailHelp" placeholder="e.g M10x1.25x80"/>
-          <form:errors path="name" cssClass="error" element="div"/>
+          <label for="exampleInputPartName">Last Name:</label>
+          <form:input path="lastName" type="text" name="LastName" class="form-control" id="exampleInputPartName"
+                      aria-describedby="emailHelp" placeholder="Last Name"/>
+          <form:errors path="lastName" cssClass="error" element="div"/>
         </div>
         <div class="form-group">
-          <label for="exampleInputPartName">Quantity:</label>
-          <form:input path="quantity" type="text" name="quantity" class="form-control" id="exampleInputPartName"
-                      aria-describedby="emailHelp" placeholder="e.g 10x"/>
-            <form:errors path="quantity" cssClass="error" element="div"/>
+          <label for="exampleInputPartName">Phone Number:</label>
+          <form:input path="phoneNumber" type="text" name="phoneNumber" class="form-control" id="exampleInputPartName"
+                      aria-describedby="emailHelp" placeholder="e.c 721 335 921"/>
+            <form:errors path="phoneNumber" cssClass="error" element="div"/>
         </div>
         <div class="form-group">
-          <label for="exampleInputEmail">Catalog Number:</label>
-          <form:input path="catalogNumber" type="text" name="catalogNumber" class="form-control" id="exampleInputEmail"
-           placeholder ="Fabory 45205.040.010"/>
-          <form:errors path="catalogNumber" cssClass="error" element="div"/>
+          <label for="exampleInputEmail">Email:</label>
+          <form:input path="email" type="text" name="email" class="form-control" id="exampleInputEmail"
+                      placeholder ="@"/>
+          <form:errors path="email" cssClass="error" element="div"/>
         </div>
+        <div class="form-group">
+          <label for="exampleInputEmail">NIP:</label>
+          <form:input path="NIP" type="text" name="NIP" class="form-control" id="exampleInputEmail"
+           placeholder ="e.c 1234567819"/>
+          <form:errors path="NIP" cssClass="error" element="div"/>
+        </div>
+        <div class="form-group">
+        <label for="exampleInputEmail">PESEL:</label>
+        <form:input path="PESEL" type="text" name="PESEL" class="form-control" id="exampleInputEmail"
+                    placeholder ="e.c 11049811077"/>
+        <form:errors path="PESEL" cssClass="error" element="div"/>
+      </div>
         <div class="form-group">
           <form:hidden path="id" /><br>
-          <button type="submit" class="btn btn-block btn-primary my-4">Add part!</button>
+          <button type="submit" class="btn btn-block btn-primary my-4">Add Customer!</button>
         </div>
       </form:form>
 
