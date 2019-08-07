@@ -62,4 +62,11 @@ public class Part {
     public void setQuantity(int quantityPerOrder) {
         this.quantity = quantityPerOrder;
     }
+
+    @Override
+    public String toString() {
+        return "Part{" +
+                "name='" + name + '\'' +
+                '}';
+    }
 }

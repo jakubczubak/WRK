@@ -61,6 +61,11 @@
           <span>-All Customer</span>
         </a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/brakeCaliper/add"role="button">
+          <span>-Brake Caliper</span>
+        </a>
+      </li>
     </ul>
 
 

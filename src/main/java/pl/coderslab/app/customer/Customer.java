@@ -16,6 +16,7 @@ public class Customer {
     private String firstName;
     @NotEmpty
     private String lastName;
+    private String companyName;
     @NumberFormat
     private String phoneNumber;
     private String email;
@@ -24,6 +25,14 @@ public class Customer {
 
     @Transient
     private String fullName;
+
+    public String getCompanyName() {
+        return companyName;
+    }
+
+    public void setCompanyName(String companyName) {
+        this.companyName = companyName;
+    }
 
     public String getFullName() {
         return firstName + " " + lastName;

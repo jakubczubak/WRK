@@ -61,11 +61,16 @@
           <span>-All Customer</span>
         </a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/brakeCaliper/add"role="button">
+          <span>-Brake Caliper</span>
+        </a>
+      </li>
     </ul>
 
 
 
-    <div class="container margin my-4" >
+    <div class="container">
 
       <h1><p class="text-success">Add Customer  <i class="fas fa-user-plus"></i></p></h1>
       <form:form method="post" modelAttribute="customer">
@@ -90,6 +95,12 @@
                       aria-describedby="emailHelp" placeholder="Last Name"/>
           <form:errors path="lastName" cssClass="error" element="div"/>
         </div>
+          <div class="form-group">
+              <label for="exampleInputPartName">Company Name:</label>
+              <form:input path="companyName" type="text" name="companyName" class="form-control" id="exampleInputPartName"
+                          aria-describedby="emailHelp" placeholder="Company Name"/>
+              <form:errors path="companyName" cssClass="error" element="div"/>
+          </div>
         <div class="form-group">
           <label for="exampleInputPartName">Phone Number:</label>
           <form:input path="phoneNumber" type="text" name="phoneNumber" class="form-control" id="exampleInputPartName"
@@ -114,19 +125,21 @@
                     placeholder ="e.c 11049811077"/>
         <form:errors path="PESEL" cssClass="error" element="div"/>
       </div>
+
         <div class="form-group">
           <form:hidden path="id" /><br>
-          <button type="submit" class="btn btn-block btn-primary my-4">Add Customer!</button>
+            <button type="submit" class="btn btn-block btn-primary my-4">Add Customer!</button>
+
         </div>
       </form:form>
 
-    </div>
+    </>
 
 
 
     <!-- Sticky Footer -->
       <footer class="sticky-footer">
-        <div class="container my-auto">
+        <div class="container my-4">
           <div class="copyright text-center my-auto">
             <span>Coder's Lab finish project by J.Czubak</span>
           </div>
