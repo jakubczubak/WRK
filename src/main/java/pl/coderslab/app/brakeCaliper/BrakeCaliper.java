@@ -1,24 +1,36 @@
 package pl.coderslab.app.brakeCaliper;
 
-import pl.coderslab.app.part.Part;
+import org.hibernate.FetchMode;
+import org.hibernate.annotations.Fetch;
+import org.springframework.data.repository.cdi.Eager;
 
 import javax.persistence.*;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
-
 @Entity
-@Table(name = "calipers")
+@Table(name = "brakeCalipers")
 public class BrakeCaliper {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
 
-    @javax.persistence.OneToMany(cascade = CascadeType.ALL)
-    @javax.persistence.MapKey(name = "name")
-    private Map<String,Part> qtyToPart = new HashMap<String,Part>();
+    @ElementCollection
+    @JoinTable(name = "BrakecaliperParts")
+    @Column(name="Quantity")
+    private Map<String, String> partName = new HashMap<String, String>();
 
+
+
+
+
+    public Map<String, String> getPartName() {
+        return partName;
+    }
+
+    public void setPartName(Map<String, String> contactMap) {
+        this.partName = contactMap;
+    }
 
     public Long getId() {
         return id;
@@ -36,11 +48,12 @@ public class BrakeCaliper {
         this.name = name;
     }
 
-    public Map<String, Part> getQtyToPart() {
-        return qtyToPart;
-    }
-
-    public void setQtyToPart(Map<String, Part> qtyToPart) {
-        this.qtyToPart = qtyToPart;
+    @Override
+    public String toString() {
+        return "BrakeCaliper{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", partName=" + partName +
+                '}';
     }
 }

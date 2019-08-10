@@ -1,6 +1,5 @@
 package pl.coderslab.app.order;
 
-import pl.coderslab.app.brakeCaliper.BrakeCaliper;
 import pl.coderslab.app.customer.Customer;
 
 import javax.persistence.*;
@@ -13,8 +12,7 @@ public class Order {
     private Long id;
     @OneToOne
     private Customer customer;
-    @OneToOne
-    private BrakeCaliper brakeCaliper;
+
     private String color;
     private String logo;
     private String adapter;

@@ -15,6 +15,14 @@
   <!-- Custom styles for this template-->
   <link href='<c:url value="/resources/css/style.css"/>' rel="stylesheet" type="text/css">
   <script src="https://kit.fontawesome.com/c395dd8104.js"></script>
+
+  <script>
+    function confirmDelete(id, name) {
+      if (confirm("Do you really want to delete " + name + "?")) {
+        window.location.href = "/brakeCaliper/delete/" + id;
+      }
+    }
+  </script>
 </head>
 
 <body id="page-top">
@@ -68,42 +76,33 @@
       </li>
     </ul>
 
+<div id="content-wrapper">
+  <table class="table table-striped table-dark">
+    <thead class="thead-dark">
+    <tr>
+      <th scope="col">CaliperName</th>
+      <th scope="col">Delete/Edit</th>
+    </tr>
+    </thead>
+    <tbody>
+    <c:forEach var="brakeCaliper" items="${brakeCalipers}">
+      <tr>
+          <%--<th scope="row">1</th>--%>
+        <td>${brakeCaliper.name}</td>
+            <td>
+          <a href="#" onclick="confirmDelete(${brakeCaliper.id},'${brakeCaliper.name}')"><button type="button" class="btn btn-danger">Delete</button></a>
+          <a href="/brakeCaliper/edit/${brakeCaliper.id}"><button type="button" class="btn btn-warning">Edit</button></a>
+        </td>
+      </tr>
+
+      </tr>
+    </c:forEach>
+    </tbody>
+  </table>
+</div>
 
 
-    <div class="container margin my-4" >
-
-      <h1><p class="text-success">Zbuduj zacisk  <i class="fas fa-wrench"></i></p></h1>
-      <form:form method="post" modelAttribute="brakeCaliper">
-        <c:if test="${param.success != null}">
-
-
-          <div class="alert alert-success" role="alert">
-
-            Success!
-
-          </div>
-        </c:if>
-        <div class="form-group">
-          <label for="exampleInputTypeOfPart">Nazwa zacisku:</label>
-          <form:input path="name" type="text" name="type" class="form-control" id="exampleInputTypeOfPart"
-                      aria-describedby="emailHelp" placeholder="e.g screw"/>
-
-        </div>
-
-        <form:checkboxes items="${parts}" path="qtyToPart" />
-
-
-        <div class="form-group">
-          <form:hidden path="id" /><br>
-          <button type="submit" class="btn btn-block btn-primary my-4">Add part!</button>
-        </div>
-      </form:form>
-
-    </div>
-
-
-
-    <!-- Sticky Footer -->
+      <!-- Sticky Footer -->
       <footer class="sticky-footer">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
