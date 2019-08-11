@@ -1,5 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="input" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -30,26 +31,40 @@
 
     <div class="container margin my-4" >
 
-        <h2>Add BrakeCaliper</h2>
-        <form:form method="post" modelAttribute="contactForm">
-            Brake Caliper name: <form:input path="name" name="name" ></form:input>
+        <h1><p class="text-primary">Add Brake Caliper  <i class="fas fa-plus"></i></p></h1>
+        <form:form cssClass="form-group" method="post" modelAttribute="contactForm">
+            <%--<h3>Name:</h3> <form:input path="name" name="name" placeholder="10.6D.356x32" ></form:input>--%>
+
+
+                <div class="form-group ">
+                    <label for="name">Name:</label>
+                    <form:input path="name" type="text" class="form-control" id="name" placeholder="name e.c. 10.6D.356.32"/>
+                    <form:errors path="name" cssClass="error" element="div"/>
+                </div>
+
+
            <form:hidden path="id" name="id" ></form:hidden>
-            <table>
+
+            <table class="table table-striped" style="margin-top: 10px">
+                <thead class="thead-dark">
                 <tr>
                     <th>Part Name:</th>
                     <th>Part Quantity:</th>
 
                 </tr>
+                </thead>
+                <tbody>
                 <c:forEach items="${contactForm.partName}" var="contactMap" varStatus="status">
                     <tr>
                         <td>${contactMap.key}</td>
                         <td><input name="partName['${contactMap.key}']" value="${contactMap.value}"/></td>
+
                     </tr>
                 </c:forEach>
+                </tbody>
             </table>
             <br/>
-
-            <input type="submit" value="Save" />
+            <button type="submit" class="btn btn-block btn-primary">Save</button>
 
         </form:form>
 

@@ -5,6 +5,7 @@ import org.hibernate.annotations.Fetch;
 import org.springframework.data.repository.cdi.Eager;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
 import java.util.HashMap;
 import java.util.Map;
 @Entity
@@ -13,8 +14,8 @@ public class BrakeCaliper {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @NotEmpty
     private String name;
-
     @ElementCollection
     @JoinTable(name = "BrakecaliperParts")
     @Column(name="Quantity")

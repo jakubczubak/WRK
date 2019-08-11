@@ -38,7 +38,7 @@
   <table class="table table-striped table-dark">
     <thead class="thead-dark">
     <tr>
-      <th scope="col">CaliperName</th>
+      <th scope="col">Brake Caliper</th>
       <th>Details:</th>
       <th scope="col">Delete/Edit</th>
     </tr>

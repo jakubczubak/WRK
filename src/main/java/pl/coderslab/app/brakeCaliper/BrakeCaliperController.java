@@ -5,6 +5,8 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import pl.coderslab.app.part.Part;
@@ -16,47 +18,34 @@ import java.util.*;
 @RequestMapping("/brakeCaliper")
 public class BrakeCaliperController {
 
+
+    private BrakeCaliperService brakeCaliperService;
     private BrakeCaliperDAO brakeCaliperDAO;
     private PartRepository partRepository;
     private BrakeCaliperRepository brakeCaliperRepository;
-    public BrakeCaliperController(PartRepository partRepository, BrakeCaliperRepository brakeCaliperRepository,BrakeCaliperDAO brakeCaliperDAO){
+    public BrakeCaliperController(PartRepository partRepository, BrakeCaliperRepository brakeCaliperRepository,BrakeCaliperDAO brakeCaliperDAO, BrakeCaliperService brakeCaliperService){
         this.partRepository=partRepository;
         this.brakeCaliperRepository = brakeCaliperRepository;
         this.brakeCaliperDAO=brakeCaliperDAO;
+        this.brakeCaliperService=brakeCaliperService;
     }
 
     @RequestMapping(value = "/add", method = RequestMethod.GET)
     public ModelAndView get() {
 
-        List<Part> partList =partRepository.findAll();
-
         BrakeCaliper brakeCaliper = new BrakeCaliper();
-        Map<String,String> partMap = new HashMap<>();
-
-
-        for(int i =0; i<partList.size(); i++){
-            partMap.put(partList.get(i).getName(),"0");
-        }
-        brakeCaliper.setPartName(partMap);
-
-
+        brakeCaliper.setPartName(brakeCaliperService.getDefaultMap());
         return new ModelAndView("add_brakeCaliper", "contactForm", brakeCaliper);
     }
 
     @RequestMapping(value = "/add", method = RequestMethod.POST)
-    public String save(@ModelAttribute("contactForm") BrakeCaliper brakeCaliper) {
+    public String save(@ModelAttribute("contactForm") @Validated BrakeCaliper brakeCaliper, BindingResult result) {
 
-        Map<String,String> newMap = brakeCaliper.getPartName();
-        Iterator<Map.Entry<String, String> >
-        iterator = newMap.entrySet().iterator();
-
-        while (iterator.hasNext()) {
-            Map.Entry entry = iterator.next();
-            if ("0".equals(entry.getValue())) {
-                iterator.remove();
-            }
+        if(result.hasErrors()){
+            return "add_brakeCaliper";
         }
-        brakeCaliper.setPartName(newMap);
+
+        brakeCaliper.setPartName(brakeCaliperService.getMapWithOutEmptyValue(brakeCaliper.getPartName()));
         brakeCaliperRepository.save(brakeCaliper);
 
         return "redirect:/brakeCaliper/all";

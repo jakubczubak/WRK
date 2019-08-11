@@ -29,12 +29,15 @@
 
 
     <div class="container margin my-4" >
-        <h2>Show BrakeCaliper</h2>
-        <table>
+        <h3>${contactForm.name}</h3>
+        <table class="table table-dark">
+            <thead class="thead-dark">
             <tr>
                 <th>Part Name:</th>
                 <th>Part Quantity:</th>
             </tr>
+            </thead>
+            <tbody>
             <c:forEach items="${contactForm.partName}" var="contactMap"
                        varStatus="status">
                 <tr>
@@ -42,9 +45,10 @@
                     <td>${contactMap.value}</td>
                 </tr>
             </c:forEach>
+            </tbody>
         </table>
         <br />
-        <input type="button" value="Back" onclick="javascript:history.back()" />
+        <input type="button" class="btn btn-warning btn-block" value="Back" onclick="javascript:history.back()" />
     </div>
 
 
