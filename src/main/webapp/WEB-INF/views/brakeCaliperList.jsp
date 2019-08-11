@@ -71,7 +71,12 @@
       </li>
       <li class="nav-item">
         <a class="nav-link" href="/brakeCaliper/add"role="button">
-          <span>-Brake Caliper</span>
+          <span>-ADD Brake Caliper</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/brakeCaliper/all"role="button">
+          <span>-Brake Caliper LIST</span>
         </a>
       </li>
     </ul>
@@ -81,6 +86,7 @@
     <thead class="thead-dark">
     <tr>
       <th scope="col">CaliperName</th>
+      <th>Details:</th>
       <th scope="col">Delete/Edit</th>
     </tr>
     </thead>
@@ -88,7 +94,9 @@
     <c:forEach var="brakeCaliper" items="${brakeCalipers}">
       <tr>
           <%--<th scope="row">1</th>--%>
-        <td>${brakeCaliper.name}</td>
+        <td>${brakeCaliper.name}</td>         <td>
+            <a href="/brakeCaliper/show/${brakeCaliper.id}"><button type="button" class="btn btn-primary">Details</button></a>
+          </td>
             <td>
           <a href="#" onclick="confirmDelete(${brakeCaliper.id},'${brakeCaliper.name}')"><button type="button" class="btn btn-danger">Delete</button></a>
           <a href="/brakeCaliper/edit/${brakeCaliper.id}"><button type="button" class="btn btn-warning">Edit</button></a>

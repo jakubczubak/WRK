@@ -44,14 +44,11 @@ public class BrakeCaliperController {
     }
 
     @RequestMapping(value = "/add", method = RequestMethod.POST)
-    public ModelAndView save(@ModelAttribute("contactForm") BrakeCaliper brakeCaliper) {
+    public String save(@ModelAttribute("contactForm") BrakeCaliper brakeCaliper) {
 
-                Map<String,String> newMap = brakeCaliper.getPartName();
-
-
-
+        Map<String,String> newMap = brakeCaliper.getPartName();
         Iterator<Map.Entry<String, String> >
-                iterator = newMap.entrySet().iterator();
+        iterator = newMap.entrySet().iterator();
 
         while (iterator.hasNext()) {
             Map.Entry entry = iterator.next();
@@ -60,8 +57,22 @@ public class BrakeCaliperController {
             }
         }
         brakeCaliper.setPartName(newMap);
-         brakeCaliperRepository.save(brakeCaliper);
-        return new ModelAndView("show_brakeCaliper", "contactForm", brakeCaliper);
+        brakeCaliperRepository.save(brakeCaliper);
+
+        return "redirect:/brakeCaliper/all";
+    }
+
+    @GetMapping("/show/{index}")
+    public String showDetails(@PathVariable("index") Long id,
+                              Model model){
+
+        BrakeCaliper brakeCaliper = brakeCaliperDAO.findById(id);
+
+        model.addAttribute("contactForm", brakeCaliper);
+
+        return "show_brakeCaliper";
+
+
     }
 
 

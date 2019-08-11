@@ -60,10 +60,14 @@
         <a class="nav-link" href="/customer/all"role="button">
           <span>-All Customer</span>
         </a>
-      </li>
       <li class="nav-item">
         <a class="nav-link" href="/brakeCaliper/add"role="button">
-          <span>-Brake Caliper</span>
+          <span>-ADD Brake Caliper</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/brakeCaliper/all"role="button">
+          <span>-Brake Caliper LIST</span>
         </a>
       </li>
     </ul>
