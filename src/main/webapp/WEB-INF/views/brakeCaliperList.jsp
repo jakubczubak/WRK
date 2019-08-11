@@ -27,59 +27,12 @@
 
 <body id="page-top">
 <!-- NAVBAR -->
-  <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
-    <a class="navbar-brand mr-1" href="/">WRK Brakes   <i class="fas fa-car"></i></a>
-    <span style = "margin-left:auto" class="navbar-brand">  <i class="far fa-user" style="color: white"></i> ${remoteUser}</span>
-    <form class="navbar-form " method = post action="/logout">
-      <button type="submit" class ="btn btn-success">Logout  <i class="fas fa-sign-out-alt"></i></button>
-      <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
-    </form>
-  </nav>
+<%@ include file="header.jsp" %>
 
   <div id="wrapper">
 
     <!-- Sidebar -->
-    <ul class="sidebar navbar-nav">
-      <li class="nav-item">
-        <span class="nav-link">MENU:</span>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/user/edit"role="button">
-          <span>-My Account</span>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/part/add"role="button">
-          <span>-Parts</span>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/part/all"role="button">
-          <span>-All Parts</span>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/customer/add"role="button">
-          <span>-Customer</span>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/customer/all"role="button">
-          <span>-All Customer</span>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/brakeCaliper/add"role="button">
-          <span>-ADD Brake Caliper</span>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/brakeCaliper/all"role="button">
-          <span>-Brake Caliper LIST</span>
-        </a>
-      </li>
-    </ul>
+    <%@ include file="sidebar.jsp" %>
 
 <div id="content-wrapper">
   <table class="table table-striped table-dark">
@@ -111,13 +64,7 @@
 
 
       <!-- Sticky Footer -->
-      <footer class="sticky-footer">
-        <div class="container my-auto">
-          <div class="copyright text-center my-auto">
-            <span>Coder's Lab finish project by J.Czubak</span>
-          </div>
-        </div>
-      </footer>
+    <%@ include file="footer.jsp" %>
 
     </div>
     <!-- /.content-wrapper -->
