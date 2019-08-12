@@ -40,4 +40,15 @@
             <span>-Brake Caliper LIST</span>
         </a>
     </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/order/add"role="button">
+            <span>-Add Order</span>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/order/all"role="button">
+            <span>-OrderList</span>
+        </a>
+
+    </li>
 </ul>

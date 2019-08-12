@@ -22,7 +22,6 @@ public class Customer {
     private String email;
     private String NIP;
     private String PESEL;
-
     @Transient
     private String fullName;
 
