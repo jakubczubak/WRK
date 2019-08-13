@@ -1,60 +1,58 @@
 <!-- Sidebar -->
 <ul class="sidebar navbar-nav">
     <li class="nav-item">
-        <span class="nav-link">MENU:</span>
+        <a class="nav-link" href="/" role="button">
+        <span class="nav-link">Dashboard</span>
         </a>
     </li>
-    <li class="nav-item">
-        <a class="nav-link" href="/user/edit" role="button">
-            <span>-My Account</span>
-        </a>
-    </li>
+
     <li class="nav-item">
         <a class="nav-link" href="/part/add" role="button">
-            <span>-Parts</span>
+            <span>Parts</span>
         </a>
     </li>
     <li class="nav-item">
         <a class="nav-link" href="/part/all" role="button">
-            <span>-All Parts</span>
+            <span>All Parts</span>
         </a>
     </li>
     <li class="nav-item">
         <a class="nav-link" href="/customer/add" role="button">
-            <span>-Customer</span>
+            <span>Customer</span>
         </a>
     </li>
     <li class="nav-item">
         <a class="nav-link" href="/customer/all" role="button">
-            <span>-All Customer</span>
+            <span>All Customer</span>
         </a>
     </li>
     </li>
     <li class="nav-item">
         <a class="nav-link" href="/brakeCaliper/add" role="button">
-            <span>-ADD Brake Caliper</span>
+            <span>ADD Brake Caliper</span>
         </a>
     </li>
     <li class="nav-item">
         <a class="nav-link" href="/brakeCaliper/all" role="button">
-            <span>-Brake Caliper LIST</span>
+            <span>Brake Caliper LIST</span>
         </a>
     </li>
     <li class="nav-item">
         <a class="nav-link" href="/order/add" role="button">
-            <span>-Add Order</span>
+            <span>Add Order</span>
         </a>
     </li>
     <li class="nav-item">
         <a class="nav-link" href="/order/all" role="button">
-            <span>-OrderList</span>
+            <span>OrderList</span>
         </a>
 
     </li>
     <li class="nav-item">
         <a class="nav-link" href="/order/activeOrders" role="button">
-            <span>-Active Order</span>
+            <span>Active Order</span>
         </a>
 
     </li>
+
 </ul>

@@ -36,6 +36,8 @@ public class HomePageController {
         model.addAttribute("remoteUser", request.getRemoteUser());
         model.addAttribute("orderSize",orderList.size());
         model.addAttribute("notFinishOrderSize",notFinishOrder.size());
+        List<Order> orderDoneList = orderRepository.findAllByIsFinish(false);
+        model.addAttribute("orderList", orderDoneList);
         return "dashboard";
     }
 

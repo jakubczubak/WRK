@@ -105,6 +105,68 @@
             </div>
 
             <!-- Sticky Footer -->
+            <div class="card mb-3">
+                <div class="card-header">
+                    <i class="fas fa-table"></i>
+                    WRK Brakes orders
+                </div>
+                <div class="card-body">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">Customer</th>
+                            <th scope="col">Car</th>
+                            <th scope="col">Axie</th>
+                            <th scope="col">Brake Caliper</th>
+                            <th scope="col">Brake Disc</th>
+                            <th scope="col">Adapter</th>
+                            <th scope="col">Bell</th>
+                            <th scope="col">Color</th>
+                            <th scope="col">Brake Pads</th>
+                            <th scope="col"></th>
+
+
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <c:forEach var="order" items="${orderList}">
+                            <tr>
+                                    <%--<th scope="row">1</th>--%>
+                                <td>${order.customer.fullName}</td>
+                                <td>${order.car}</td>
+                                <td>${order.axies}</td>
+                                <td>${order.brakeCaliper.name}</td>
+                                <td>${order.brakeDisc}</td>
+                                <td>${order.adapter}</td>
+                                <td>${order.bell}</td>
+                                <td>${order.color}</td>
+                                <td>${order.brakePads}</td>
+
+                                <td>
+                                    <a href="/order/details/${order.id}">
+                                        <button type="button" class="btn btn-primary"><i class="fas fa-info"></i>
+                                        </button>
+                                    </a>
+                                    <a href="/order/edit/${order.id}">
+                                        <button type="button" class="btn btn-warning"><i class="fas fa-edit"></i>
+                                        </button>
+                                    </a>
+                                    <a href="/order/finish/${order.id}">
+                                        <button type="button" class="btn btn-success"><i
+                                                class="fas fa-check-circle"></i></button>
+                                    </a>
+
+                                </td>
+
+                            </tr>
+
+                            </tr>
+                        </c:forEach>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+            </div>
 
 
             <%@ include file="footer.jsp" %>

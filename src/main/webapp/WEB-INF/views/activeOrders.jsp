@@ -72,7 +72,7 @@
                             <button type="button" class="btn btn-success"><i class="fas fa-check-circle"></i></button>
                         </a>
                         <a href="/order/notFinish/${order.id}">
-                            <button type="button" class="btn btn-success"><i class="fas fa-check-circle"></i></button>
+                            <button type="button" class="btn btn-danger"><i class="fas fa-times-circle"></i></button>
                         </a>
                     </td>
                     <td>
