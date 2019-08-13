@@ -45,9 +45,9 @@
                             <div class="card-body-icon">
                                 <i class="fas fa-shopping-basket"></i>
                             </div>
-                            <div class="mr-5">26 Orders</div>
+                            <div class="mr-5">${orderSize} Orders</div>
                         </div>
-                        <a class="card-footer text-white clearfix small z-1" href="#">
+                        <a class="card-footer text-white clearfix small z-1" href="/order/all">
                             <span class="float-left">View Details</span>
                             <span class="float-right">
                   <i class="fas fa-angle-right"></i>
@@ -77,9 +77,9 @@
                             <div class="card-body-icon">
                                 <i class="fas fa-fw fa-shopping-cart"></i>
                             </div>
-                            <div class="mr-5">123 New Orders</div>
+                            <div class="mr-5">${notFinishOrderSize} New Orders</div>
                         </div>
-                        <a class="card-footer text-white clearfix small z-1" href="#">
+                        <a class="card-footer text-white clearfix small z-1" href="/order/activeOrders">
                             <span class="float-left">View Details</span>
                             <span class="float-right">
                   <i class="fas fa-angle-right"></i>

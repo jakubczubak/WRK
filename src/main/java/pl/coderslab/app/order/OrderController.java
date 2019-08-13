@@ -85,6 +85,21 @@ public class OrderController {
         return "redirect:/order/all";
     }
 
+    @GetMapping("/details/{index}")
+    public String getDetails(@PathVariable("index") Long id,
+                             Model model) {
+        Order existOrder = orderDAO.findById(id);
+        model.addAttribute("existOrder", existOrder);
+        return "orderDetails";
+    }
+
+
+    @GetMapping("/activeOrders")
+    public String getAllDoneOrders(Model model) {
+        List<Order> orderList = orderRepository.findAllByIsFinish(false);
+        model.addAttribute("orderList", orderList);
+        return "activeOrders";
+    }
 
     @ModelAttribute("brakeCalipers")
     public List<BrakeCaliper> getAllBrakeCalipers() {

@@ -44,7 +44,7 @@
                 <th scope="col">Email</th>
                 <th scope="col">NIP</th>
                 <th scope="col">PESEL</th>
-                <th scope="col">Delete/Edit</th>
+                <th scope="col"></th>
             </tr>
             </thead>
             <tbody>

@@ -41,7 +41,7 @@
                 <th scope="col">Part name</th>
                 <th scope="col">Catalog number</th>
                 <th scope="col">Quantity</th>
-                <th scope="col">Delete/Edit</th>
+                <th scope="col"></th>
             </tr>
             </thead>
             <tbody>

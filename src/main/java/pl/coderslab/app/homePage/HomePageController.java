@@ -5,11 +5,14 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
+import pl.coderslab.app.order.Order;
+import pl.coderslab.app.order.OrderRepository;
 import pl.coderslab.app.user.User;
 import pl.coderslab.app.user.UserRepository;
 import pl.coderslab.app.user.UserService;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 
 @Controller
@@ -18,16 +21,21 @@ public class HomePageController {
 
     private UserRepository userRepository;
     private UserService userService;
+    private OrderRepository orderRepository;
 
-    public HomePageController(UserRepository userRepository, UserService userService) {
+    public HomePageController(UserRepository userRepository, UserService userService, OrderRepository orderRepository) {
         this.userRepository = userRepository;
         this.userService = userService;
+        this.orderRepository=orderRepository;
     }
 
     @RequestMapping("/")
     public String hello(Model model, HttpServletRequest request) {
+        List<Order> orderList = orderRepository.findAll();
+        List<Order> notFinishOrder = orderRepository.findAllByIsFinish(false);
         model.addAttribute("remoteUser", request.getRemoteUser());
-
+        model.addAttribute("orderSize",orderList.size());
+        model.addAttribute("notFinishOrderSize",notFinishOrder.size());
         return "dashboard";
     }
 

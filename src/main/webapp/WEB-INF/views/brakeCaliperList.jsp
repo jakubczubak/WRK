@@ -40,7 +40,7 @@
             <tr>
                 <th scope="col">Brake Caliper</th>
                 <th>Details:</th>
-                <th scope="col">Delete/Edit</th>
+                <th scope="col"></th>
             </tr>
             </thead>
             <tbody>
