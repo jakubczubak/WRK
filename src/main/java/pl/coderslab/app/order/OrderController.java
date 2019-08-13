@@ -15,13 +15,16 @@ import java.util.List;
 @RequestMapping("/order")
 public class OrderController {
 
+    private OrderDAO orderDAO;
     private CustomerReposiotry customerReposiotry;
     private BrakeCaliperRepository brakeCaliperRepository;
     private OrderRepository orderRepository;
-    public OrderController(OrderRepository orderRepository, BrakeCaliperRepository brakeCaliperRepository, CustomerReposiotry customerReposiotry){
+    public OrderController(OrderRepository orderRepository, BrakeCaliperRepository brakeCaliperRepository, CustomerReposiotry customerReposiotry,
+                           OrderDAO orderDAO){
         this.orderRepository=orderRepository;
         this.brakeCaliperRepository = brakeCaliperRepository;
         this.customerReposiotry=customerReposiotry;
+        this.orderDAO=orderDAO;
 
     }
 
@@ -33,6 +36,7 @@ public class OrderController {
 
     @PostMapping("/add")
     public String addOrderProcess(@ModelAttribute Order order){
+        order.setFinish(false);
         orderRepository.save(order);
         return "redirect:/order/all";
     }
@@ -47,13 +51,13 @@ public class OrderController {
     @GetMapping("/delete/{index}")
     public String deleteOrder(@PathVariable("index") Long id){
         orderRepository.delete(orderRepository.getOne(id));
-        return "redirect:/order/add";
+        return "redirect:/order/all";
     }
 
     @GetMapping("/edit/{index}")
     public String editOrder(@PathVariable("index") Long id,
                             Model model){
-        Order existOrder = orderRepository.getOne(id);
+        Order existOrder = orderDAO.findById(id);
         model.addAttribute("order", existOrder);
         return "addOrder";
     }
@@ -63,6 +67,25 @@ public class OrderController {
         orderRepository.save(order);
         return "redirect:/order/all";
     }
+
+    @GetMapping("/finish/{index}")
+    public String finishOrder(@PathVariable("index") Long id){
+        Order existOrder = orderDAO.findById(id);
+        existOrder.setFinish(true);
+        orderRepository.save(existOrder);
+        return "redirect:/order/all";
+    }
+
+    @GetMapping("/notFinish/{index}")
+    public String notFinishOrder(@PathVariable("index") Long id){
+        Order existOrder = orderDAO.findById(id);
+        existOrder.setFinish(false);
+        orderRepository.save(existOrder);
+        return "redirect:/order/all";
+    }
+
+
+
 
 
     @ModelAttribute("brakeCalipers")

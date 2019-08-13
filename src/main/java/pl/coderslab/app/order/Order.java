@@ -1,5 +1,6 @@
 package pl.coderslab.app.order;
 
+import org.springframework.data.repository.cdi.Eager;
 import pl.coderslab.app.brakeCaliper.BrakeCaliper;
 import pl.coderslab.app.customer.Customer;
 
@@ -19,6 +20,7 @@ public class Order {
     private String color;
     private String logo;
     private String adapter;
+    private String brakeDisc;
     private String bell;
     private String brakePads;
     private String details;
@@ -29,7 +31,34 @@ public class Order {
     private String carBrand;
     private String carModel;
     private String axies;
+    @Transient
+    private String car;
+    private boolean isFinish;
 
+
+    public boolean isFinish() {
+        return isFinish;
+    }
+
+    public void setFinish(boolean finish) {
+        isFinish = finish;
+    }
+
+    public String getBrakeDisc() {
+        return brakeDisc;
+    }
+
+    public void setBrakeDisc(String brakeDisc) {
+        this.brakeDisc = brakeDisc;
+    }
+
+    public String getCar() {
+        return carBrand+" "+carModel;
+    }
+
+    public void setCar(String car) {
+        this.car = car;
+    }
 
     public String getAxies() {
         return axies;

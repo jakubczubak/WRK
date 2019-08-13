@@ -75,6 +75,11 @@
                 <form:input path="logo" id="logo" cssClass="form-control"></form:input>
 
             </div>
+        <div class="form-group">
+            <label for="brakeDisc">Brake disc:</label>
+            <form:input path="brakeDisc" id="brakeDisc" cssClass="form-control"></form:input>
+
+        </div>
             <div class="form-group">
                 <label for="bell">Bell:</label>
                 <form:input path="bell" id="bell" cssClass="form-control"></form:input>
@@ -100,7 +105,7 @@
             <label for="exampleFormControlTextarea1">Additional information:</label>
             <form:textarea  path="details" class="form-control" id="exampleFormControlTextarea1" rows="3"></form:textarea>
         </div>
-
+            <form:hidden path="id"></form:hidden>
             <button type="submit" class="btn btn-primary btn-block">ADD ORDER<i class="fas fa-plus"></i></button>
 
 
