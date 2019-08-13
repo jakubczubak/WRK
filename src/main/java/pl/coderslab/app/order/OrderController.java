@@ -19,57 +19,58 @@ public class OrderController {
     private CustomerReposiotry customerReposiotry;
     private BrakeCaliperRepository brakeCaliperRepository;
     private OrderRepository orderRepository;
+
     public OrderController(OrderRepository orderRepository, BrakeCaliperRepository brakeCaliperRepository, CustomerReposiotry customerReposiotry,
-                           OrderDAO orderDAO){
-        this.orderRepository=orderRepository;
+                           OrderDAO orderDAO) {
+        this.orderRepository = orderRepository;
         this.brakeCaliperRepository = brakeCaliperRepository;
-        this.customerReposiotry=customerReposiotry;
-        this.orderDAO=orderDAO;
+        this.customerReposiotry = customerReposiotry;
+        this.orderDAO = orderDAO;
 
     }
 
     @GetMapping("/add")
-    public String addOrder(Model model){
+    public String addOrder(Model model) {
         model.addAttribute("order", new Order());
         return "addOrder";
     }
 
     @PostMapping("/add")
-    public String addOrderProcess(@ModelAttribute Order order){
+    public String addOrderProcess(@ModelAttribute Order order) {
         order.setFinish(false);
         orderRepository.save(order);
         return "redirect:/order/all";
     }
 
     @GetMapping("/all")
-    public String getAllOrders(Model model){
+    public String getAllOrders(Model model) {
         List<Order> orderList = orderRepository.findAll();
         model.addAttribute("orderList", orderList);
         return "orderList";
     }
 
     @GetMapping("/delete/{index}")
-    public String deleteOrder(@PathVariable("index") Long id){
+    public String deleteOrder(@PathVariable("index") Long id) {
         orderRepository.delete(orderRepository.getOne(id));
         return "redirect:/order/all";
     }
 
     @GetMapping("/edit/{index}")
     public String editOrder(@PathVariable("index") Long id,
-                            Model model){
+                            Model model) {
         Order existOrder = orderDAO.findById(id);
         model.addAttribute("order", existOrder);
         return "addOrder";
     }
 
-    @PostMapping ("/edit/{index}")
-    public String editOrderProcess(@ModelAttribute Order order){
+    @PostMapping("/edit/{index}")
+    public String editOrderProcess(@ModelAttribute Order order) {
         orderRepository.save(order);
         return "redirect:/order/all";
     }
 
     @GetMapping("/finish/{index}")
-    public String finishOrder(@PathVariable("index") Long id){
+    public String finishOrder(@PathVariable("index") Long id) {
         Order existOrder = orderDAO.findById(id);
         existOrder.setFinish(true);
         orderRepository.save(existOrder);
@@ -77,7 +78,7 @@ public class OrderController {
     }
 
     @GetMapping("/notFinish/{index}")
-    public String notFinishOrder(@PathVariable("index") Long id){
+    public String notFinishOrder(@PathVariable("index") Long id) {
         Order existOrder = orderDAO.findById(id);
         existOrder.setFinish(false);
         orderRepository.save(existOrder);
@@ -85,21 +86,18 @@ public class OrderController {
     }
 
 
-
-
-
     @ModelAttribute("brakeCalipers")
-    public List<BrakeCaliper> getAllBrakeCalipers(){
+    public List<BrakeCaliper> getAllBrakeCalipers() {
         return brakeCaliperRepository.findAll();
     }
 
     @ModelAttribute("customers")
-    public List<Customer> getAllCustomer(){
+    public List<Customer> getAllCustomer() {
         return customerReposiotry.findAll();
     }
 
     @ModelAttribute("galvanicCoating")
-    public List<String> powloki(){
+    public List<String> powloki() {
         List<String> shell = new ArrayList<>();
         shell.add("Anode");
         shell.add("Hard anode");
@@ -109,7 +107,7 @@ public class OrderController {
     }
 
     @ModelAttribute("axies")
-    public List<String> axies(){
+    public List<String> axies() {
         List<String> axies = new ArrayList<>();
         axies.add("front");
         axies.add("back");

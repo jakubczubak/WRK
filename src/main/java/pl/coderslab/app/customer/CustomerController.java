@@ -16,20 +16,20 @@ public class CustomerController {
 
     private CustomerReposiotry customerReposiotry;
 
-    public CustomerController(CustomerReposiotry customerReposiotry){
-        this.customerReposiotry=customerReposiotry;
+    public CustomerController(CustomerReposiotry customerReposiotry) {
+        this.customerReposiotry = customerReposiotry;
     }
 
     @GetMapping("/add")
-    public String getCustomer(Model model){
+    public String getCustomer(Model model) {
         model.addAttribute("customer", new Customer());
         return "customer";
     }
 
     @PostMapping("/add")
     public String getCustomerProcess(@ModelAttribute @Validated Customer customer,
-                                     BindingResult result){
-        if(result.hasErrors()){
+                                     BindingResult result) {
+        if (result.hasErrors()) {
             return "customer";
         }
         customerReposiotry.save(customer);
@@ -37,27 +37,28 @@ public class CustomerController {
     }
 
     @GetMapping("/all")
-    public String getAllCustomer(Model model){
+    public String getAllCustomer(Model model) {
         List<Customer> customerList = customerReposiotry.findAll();
         model.addAttribute("customerList", customerList);
         return "customerList";
     }
 
     @GetMapping("/delete/{index}")
-    public String deleteCustomer(@PathVariable("index") Long id){
+    public String deleteCustomer(@PathVariable("index") Long id) {
         customerReposiotry.delete(customerReposiotry.getOne(id));
         return "redirect:/customer/all";
     }
 
     @GetMapping("/edit/{index}")
     public String editCustomer(Model model,
-                           @PathVariable("index") Long id){
+                               @PathVariable("index") Long id) {
         Optional<Customer> existingCustomer = customerReposiotry.findById(id);
         model.addAttribute("customer", existingCustomer);
         return "customer";
     }
+
     @PostMapping("/edit/{index}")
-    public String editPartProcess(@ModelAttribute Customer customer){
+    public String editPartProcess(@ModelAttribute Customer customer) {
         customerReposiotry.save(customer);
         return "redirect:/customer/all";
     }

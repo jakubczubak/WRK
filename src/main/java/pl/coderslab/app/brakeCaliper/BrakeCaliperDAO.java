@@ -14,8 +14,8 @@ public class BrakeCaliperDAO {
     @PersistenceContext
     EntityManager entityManager;
 
-    public BrakeCaliper findById(Long id){
-       BrakeCaliper brakeCaliper =entityManager.find(BrakeCaliper.class,id);
+    public BrakeCaliper findById(Long id) {
+        BrakeCaliper brakeCaliper = entityManager.find(BrakeCaliper.class, id);
         Hibernate.initialize(brakeCaliper.getPartName());
         return brakeCaliper;
     }

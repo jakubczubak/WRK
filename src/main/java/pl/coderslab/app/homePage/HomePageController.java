@@ -19,9 +19,9 @@ public class HomePageController {
     private UserRepository userRepository;
     private UserService userService;
 
-    public HomePageController(UserRepository userRepository,UserService userService) {
+    public HomePageController(UserRepository userRepository, UserService userService) {
         this.userRepository = userRepository;
-        this.userService=userService;
+        this.userService = userService;
     }
 
     @RequestMapping("/")
@@ -33,8 +33,8 @@ public class HomePageController {
 
     @GetMapping("/mylogin")
     public String getLogin(Model model, @RequestParam(required = false) String username) {
-        if(username!=null){
-            model.addAttribute("username",username);
+        if (username != null) {
+            model.addAttribute("username", username);
         }
         return "login";
     }
@@ -46,23 +46,21 @@ public class HomePageController {
     }
 
     @PostMapping("/myregistration")
-    public String createNewUser(Model model,@ModelAttribute @Validated User user, BindingResult result) {
+    public String createNewUser(Model model, @ModelAttribute @Validated User user, BindingResult result) {
         User userExist = userRepository.findByEmail(user.getEmail());
 //        if(userExist!=null){
 //            result
 //                    .rejectValue("email", "error.user",
 //                            "There is already a user registered with the email provided");
 //        }
-        if(result.hasErrors()){
+        if (result.hasErrors()) {
             return "registration";
-        }else {
+        } else {
             userService.saveUser(user);
         }
-        model.addAttribute("username",user.getFirstName());
+        model.addAttribute("username", user.getFirstName());
         return "redirect:/mylogin?success";
     }
-
-
 
 
 }

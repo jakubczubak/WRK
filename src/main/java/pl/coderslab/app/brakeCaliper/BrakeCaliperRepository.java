@@ -7,7 +7,7 @@ import org.springframework.data.repository.cdi.Eager;
 import org.springframework.transaction.annotation.Transactional;
 
 
-public interface BrakeCaliperRepository extends JpaRepository<BrakeCaliper,Long> {
+public interface BrakeCaliperRepository extends JpaRepository<BrakeCaliper, Long> {
 
 
 }

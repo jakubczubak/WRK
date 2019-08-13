@@ -23,11 +23,12 @@ public class BrakeCaliperController {
     private BrakeCaliperDAO brakeCaliperDAO;
     private PartRepository partRepository;
     private BrakeCaliperRepository brakeCaliperRepository;
-    public BrakeCaliperController(PartRepository partRepository, BrakeCaliperRepository brakeCaliperRepository,BrakeCaliperDAO brakeCaliperDAO, BrakeCaliperService brakeCaliperService){
-        this.partRepository=partRepository;
+
+    public BrakeCaliperController(PartRepository partRepository, BrakeCaliperRepository brakeCaliperRepository, BrakeCaliperDAO brakeCaliperDAO, BrakeCaliperService brakeCaliperService) {
+        this.partRepository = partRepository;
         this.brakeCaliperRepository = brakeCaliperRepository;
-        this.brakeCaliperDAO=brakeCaliperDAO;
-        this.brakeCaliperService=brakeCaliperService;
+        this.brakeCaliperDAO = brakeCaliperDAO;
+        this.brakeCaliperService = brakeCaliperService;
     }
 
     @RequestMapping(value = "/add", method = RequestMethod.GET)
@@ -41,7 +42,7 @@ public class BrakeCaliperController {
     @RequestMapping(value = "/add", method = RequestMethod.POST)
     public String save(@ModelAttribute("contactForm") @Validated BrakeCaliper brakeCaliper, BindingResult result) {
 
-        if(result.hasErrors()){
+        if (result.hasErrors()) {
             return "add_brakeCaliper";
         }
 
@@ -53,7 +54,7 @@ public class BrakeCaliperController {
 
     @GetMapping("/show/{index}")
     public String showDetails(@PathVariable("index") Long id,
-                              Model model){
+                              Model model) {
 
         BrakeCaliper brakeCaliper = brakeCaliperDAO.findById(id);
 
@@ -66,7 +67,7 @@ public class BrakeCaliperController {
 
 
     @GetMapping("/all")
-    public String getAllBrakeCaliper(Model model){
+    public String getAllBrakeCaliper(Model model) {
         List<BrakeCaliper> brakeCalipers = brakeCaliperRepository.findAll();
         model.addAttribute("brakeCalipers", brakeCalipers);
         return "brakeCaliperList";
@@ -74,7 +75,7 @@ public class BrakeCaliperController {
 
 
     @GetMapping("/delete/{index}")
-    public String deleteBrakeCaliper(@PathVariable("index") Long id){
+    public String deleteBrakeCaliper(@PathVariable("index") Long id) {
         brakeCaliperRepository.delete(brakeCaliperRepository.getOne(id));
         return "redirect:/brakeCaliper/all";
     }
@@ -82,14 +83,15 @@ public class BrakeCaliperController {
 
     @GetMapping("/edit/{index}")
     public String editBrakeCaliper(ModelMap modelMap,
-                                   @PathVariable("index") Long id){
+                                   @PathVariable("index") Long id) {
 
-       BrakeCaliper existingBrakeCaliper = brakeCaliperDAO.findById(id);
+        BrakeCaliper existingBrakeCaliper = brakeCaliperDAO.findById(id);
         modelMap.addAttribute("contactForm", existingBrakeCaliper);
         return "add_brakeCaliper";
     }
+
     @PostMapping("/edit/{index}")
-    public String editPartProcess(@ModelAttribute("contactForm") BrakeCaliper brakeCaliper){
+    public String editPartProcess(@ModelAttribute("contactForm") BrakeCaliper brakeCaliper) {
         brakeCaliperRepository.save(brakeCaliper);
         return "redirect:/brakeCaliper/all";
     }

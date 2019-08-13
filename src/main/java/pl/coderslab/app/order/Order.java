@@ -53,7 +53,7 @@ public class Order {
     }
 
     public String getCar() {
-        return carBrand+" "+carModel;
+        return carBrand + " " + carModel;
     }
 
     public void setCar(String car) {

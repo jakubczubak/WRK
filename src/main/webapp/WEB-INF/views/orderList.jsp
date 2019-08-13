@@ -35,8 +35,7 @@
     <%@ include file="sidebar.jsp" %>
 
 
-
-    <div id="content-wrapper" >
+    <div id="content-wrapper">
         <table class="table table-striped table-dark">
             <thead class="thead-dark">
             <tr>
@@ -62,32 +61,42 @@
                     <td>${order.brakeCaliper.name}</td>
                     <td>${order.brakeDisc}</td>
 
-                            <td>
-                                <a href="/order/edit/${order.id}"><button type="button" class="btn btn-primary">Details</button></a>
-                            </td>
-
-                            <td>
-                                <a href="/order/finish/${order.id}"><button type="button" class="btn btn-success"><i class="fas fa-check-circle"></i></button></a>
-                                <a href="/order/notFinish/${order.id}"><button type="button" class="btn btn-success"><i class="fas fa-check-circle"></i></button></a>
-                            </td>
                     <td>
-                        <a href="#" onclick="confirmDelete(${order.id},'${order.brakeCaliper.name}')"><button type="button" class="btn btn-danger">Delete</button></a>
-                        <a href="/order/edit/${order.id}"><button type="button" class="btn btn-warning">Edit</button></a>
+                        <a href="/order/edit/${order.id}">
+                            <button type="button" class="btn btn-primary">Details</button>
+                        </a>
                     </td>
-                            <td>
-                                <c:if test="${order.finish}">
+
+                    <td>
+                        <a href="/order/finish/${order.id}">
+                            <button type="button" class="btn btn-success"><i class="fas fa-check-circle"></i></button>
+                        </a>
+                        <a href="/order/notFinish/${order.id}">
+                            <button type="button" class="btn btn-success"><i class="fas fa-check-circle"></i></button>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="#" onclick="confirmDelete(${order.id},'${order.brakeCaliper.name}')">
+                            <button type="button" class="btn btn-danger">Delete</button>
+                        </a>
+                        <a href="/order/edit/${order.id}">
+                            <button type="button" class="btn btn-warning">Edit</button>
+                        </a>
+                    </td>
+                    <td>
+                        <c:if test="${order.finish}">
 
 
-                                <div class="btn btn-primary" role="alert">
-                                     DONE
-                                </div>
-                                  </c:if>
-                                <c:if test="${order.finish==false}">
-                                    <div class="btn btn-warning" role="alert">
-                                        IN PROCESS
-                                    </div>
-                                </c:if>
-                            </td>
+                            <div class="btn btn-primary" role="alert">
+                                DONE
+                            </div>
+                        </c:if>
+                        <c:if test="${order.finish==false}">
+                            <div class="btn btn-warning" role="alert">
+                                IN PROCESS
+                            </div>
+                        </c:if>
+                    </td>
                 </tr>
 
                 </tr>
@@ -98,7 +107,6 @@
     </div>
 
 
-
     <!-- Sticky Footer -->
     <%@ include file="footer.jsp" %>
 
@@ -106,10 +114,8 @@
 <!-- /.content-wrapper -->
 
 
-
 </div>
 <!-- /#wrapper -->
-
 
 
 </div>

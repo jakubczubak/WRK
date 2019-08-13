@@ -18,12 +18,12 @@ public class PartController {
 
     private PartRepository partRepository;
 
-    public PartController(PartRepository partRepository){
-        this.partRepository=partRepository;
+    public PartController(PartRepository partRepository) {
+        this.partRepository = partRepository;
     }
 
     @GetMapping(value = "/add")
-    public String addPart(Model model){
+    public String addPart(Model model) {
         model.addAttribute("part", new Part());
         return "part";
     }
@@ -31,8 +31,8 @@ public class PartController {
     @PostMapping(value = "/add")
     public String addPartProcess(@ModelAttribute @Validated Part part,
                                  BindingResult result,
-                                 Model model){
-        if(result.hasErrors()){
+                                 Model model) {
+        if (result.hasErrors()) {
             return "part";
         }
 
@@ -43,13 +43,13 @@ public class PartController {
     }
 
     @GetMapping("/delete/{index}")
-    public String deletePart(@PathVariable("index") Long id){
+    public String deletePart(@PathVariable("index") Long id) {
         partRepository.delete(partRepository.getOne(id));
         return "redirect:/part/all";
     }
 
     @GetMapping("/all")
-    public String getAllParts(Model model){
+    public String getAllParts(Model model) {
         List<Part> partList = partRepository.findAll();
         model.addAttribute("partList", partList);
         return "partList";
@@ -57,13 +57,14 @@ public class PartController {
 
     @GetMapping("/edit/{index}")
     public String editPart(Model model,
-                           @PathVariable("index") Long id){
+                           @PathVariable("index") Long id) {
         Optional<Part> existingPart = partRepository.findById(id);
         model.addAttribute("part", existingPart);
         return "part";
     }
+
     @PostMapping("/edit/{index}")
-    public String editPartProcess(@ModelAttribute Part part){
+    public String editPartProcess(@ModelAttribute Part part) {
         partRepository.save(part);
         return "redirect:/part/all";
     }

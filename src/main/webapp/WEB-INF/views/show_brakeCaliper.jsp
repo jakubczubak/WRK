@@ -27,8 +27,7 @@
     <%@ include file="sidebar.jsp" %>
 
 
-
-    <div class="container margin my-4" >
+    <div class="container margin my-4">
         <h3>${contactForm.name}</h3>
         <table class="table table-dark">
             <thead class="thead-dark">
@@ -47,10 +46,9 @@
             </c:forEach>
             </tbody>
         </table>
-        <br />
-        <input type="button" class="btn btn-warning btn-block" value="Back" onclick="javascript:history.back()" />
+        <br/>
+        <input type="button" class="btn btn-warning btn-block" value="Back" onclick="javascript:history.back()"/>
     </div>
-
 
 
     <!-- Sticky Footer -->
@@ -60,10 +58,8 @@
 <!-- /.content-wrapper -->
 
 
-
 </div>
 <!-- /#wrapper -->
-
 
 
 </div>

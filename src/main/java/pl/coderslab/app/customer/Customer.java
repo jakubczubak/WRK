@@ -48,6 +48,7 @@ public class Customer {
     public void setEmail(String emial) {
         this.email = emial;
     }
+
     public Long getId() {
         return id;
     }

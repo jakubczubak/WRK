@@ -8,6 +8,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import java.util.HashMap;
 import java.util.Map;
+
 @Entity
 @Table(name = "brakeCalipers")
 public class BrakeCaliper {
@@ -18,11 +19,8 @@ public class BrakeCaliper {
     private String name;
     @ElementCollection
     @JoinTable(name = "BrakecaliperParts")
-    @Column(name="Quantity")
+    @Column(name = "Quantity")
     private Map<String, String> partName = new HashMap<String, String>();
-
-
-
 
 
     public Map<String, String> getPartName() {

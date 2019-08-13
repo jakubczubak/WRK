@@ -15,8 +15,8 @@ public class OrderDAO {
     EntityManager entityManager;
 
 
-    public Order findById(Long id){
-        Order order = entityManager.find(Order.class,id);
+    public Order findById(Long id) {
+        Order order = entityManager.find(Order.class, id);
         Hibernate.initialize(order.getCustomer());
         Hibernate.initialize(order.getGalvanicCoating());
         return order;
