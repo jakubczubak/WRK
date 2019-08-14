@@ -2,7 +2,7 @@
 <ul class="sidebar navbar-nav">
     <li class="nav-item">
         <a class="nav-link" href="/" role="button">
-        <span class="nav-link">Dashboard</span>
+            <span class="nav-link">Dashboard</span>
         </a>
     </li>
 
@@ -54,5 +54,6 @@
         </a>
 
     </li>
+
 
 </ul>

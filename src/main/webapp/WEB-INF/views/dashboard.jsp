@@ -147,11 +147,11 @@
                                         <button type="button" class="btn btn-primary"><i class="fas fa-info"></i>
                                         </button>
                                     </a>
-                                    <a href="/order/edit/${order.id}">
+                                    <a href="/edit/${order.id}">
                                         <button type="button" class="btn btn-warning"><i class="fas fa-edit"></i>
                                         </button>
                                     </a>
-                                    <a href="/order/finish/${order.id}">
+                                    <a href="/finish/${order.id}">
                                         <button type="button" class="btn btn-success"><i
                                                 class="fas fa-check-circle"></i></button>
                                     </a>

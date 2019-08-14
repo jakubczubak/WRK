@@ -24,7 +24,6 @@ public class Order {
     private String bell;
     private String brakePads;
     private String details;
-    private boolean active;
     @ElementCollection
     private List<String> galvanicCoating;
     private String brakeLines;
@@ -172,11 +171,4 @@ public class Order {
         this.details = details;
     }
 
-    public boolean isActive() {
-        return active;
-    }
-
-    public void setActive(boolean active) {
-        this.active = active;
-    }
 }
