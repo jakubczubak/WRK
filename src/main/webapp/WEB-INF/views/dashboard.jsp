@@ -14,7 +14,7 @@
     <!-- Custom styles for this template-->
     <link href='<c:url value="/resources/css/style.css"/>' rel="stylesheet" type="text/css">
     <script src="https://kit.fontawesome.com/c395dd8104.js"></script>
-</head>
+    </head>
 
 <body id="page-top">
 <!-- NAVBAR -->
@@ -144,7 +144,7 @@
 
                                 <td>
                                     <a href="/order/details/${order.id}">
-                                        <button type="button" class="btn btn-primary"><i class="fas fa-info"></i>
+                                        <button type="button" class="btn btn-primary"><i class="fas fa-question-circle"></i>
                                         </button>
                                     </a>
                                     <a href="/edit/${order.id}">

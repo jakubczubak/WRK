@@ -3,7 +3,6 @@ package pl.coderslab.app.customer;
 import org.springframework.format.annotation.NumberFormat;
 
 import javax.persistence.*;
-import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 
 @Entity

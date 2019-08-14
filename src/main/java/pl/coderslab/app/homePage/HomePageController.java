@@ -5,8 +5,6 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
-import pl.coderslab.app.brakeCaliper.BrakeCaliper;
-import pl.coderslab.app.customer.Customer;
 import pl.coderslab.app.order.Order;
 import pl.coderslab.app.order.OrderDAO;
 import pl.coderslab.app.order.OrderRepository;

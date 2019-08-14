@@ -1,10 +1,7 @@
 package pl.coderslab.app.role;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import pl.coderslab.app.user.User;
 
+import pl.coderslab.app.user.User;
 import javax.persistence.*;
 import java.util.Set;
 

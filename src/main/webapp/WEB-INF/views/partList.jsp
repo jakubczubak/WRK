@@ -53,10 +53,10 @@
                     <td>${part.quantity}</td>
                     <td>
                         <a href="#" onclick="confirmDelete(${part.id},'${part.name}')">
-                            <button type="button" class="btn btn-danger">Delete</button>
+                            <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
                         </a>
                         <a href="/part/edit/${part.id}">
-                            <button type="button" class="btn btn-warning">Edit</button>
+                            <button type="button" class="btn btn-warning"><i class="fas fa-edit"></i></button>
                         </a>
                     </td>
                 </tr>

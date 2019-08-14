@@ -1,3 +1,6 @@
+
+<link href="https://fonts.googleapis.com/css?family=Frijole&display=swap" rel="stylesheet">
+
 <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
     <a class="navbar-brand mr-1" href="/">WRK Brakes <i class="fas fa-car"></i></a>
     <a class="navbar-brand mr-1" href="/"> </a>

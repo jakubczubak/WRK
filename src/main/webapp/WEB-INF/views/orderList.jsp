@@ -63,7 +63,7 @@
 
                     <td>
                         <a href="/order/details/${order.id}">
-                            <button type="button" class="btn btn-primary">Details</button>
+                            <button type="button" class="btn btn-primary"><i class="fas fa-question-circle"></i></button>
                         </a>
                     </td>
 
@@ -77,10 +77,10 @@
                     </td>
                     <td>
                         <a href="#" onclick="confirmDelete(${order.id},'${order.brakeCaliper.name}')">
-                            <button type="button" class="btn btn-danger">Delete</button>
+                            <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
                         </a>
                         <a href="/order/edit/${order.id}">
-                            <button type="button" class="btn btn-warning">Edit</button>
+                            <button type="button" class="btn btn-warning"><i class="fas fa-edit"></i></button>
                         </a>
                     </td>
                     <td>

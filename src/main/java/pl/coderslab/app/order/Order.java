@@ -1,6 +1,6 @@
 package pl.coderslab.app.order;
 
-import org.springframework.data.repository.cdi.Eager;
+
 import pl.coderslab.app.brakeCaliper.BrakeCaliper;
 import pl.coderslab.app.customer.Customer;
 

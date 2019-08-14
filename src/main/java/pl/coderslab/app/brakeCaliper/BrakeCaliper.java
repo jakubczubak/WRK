@@ -1,9 +1,5 @@
 package pl.coderslab.app.brakeCaliper;
 
-import org.hibernate.FetchMode;
-import org.hibernate.annotations.Fetch;
-import org.springframework.data.repository.cdi.Eager;
-
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import java.util.HashMap;
