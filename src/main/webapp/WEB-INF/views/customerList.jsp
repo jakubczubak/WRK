@@ -38,6 +38,7 @@
         <table class="table table-striped table-dark">
             <thead class="thead-dark">
             <tr>
+                <th scope="col">#ID</th>
                 <th scope="col">First Name</th>
                 <th scope="col">Last Name</th>
                 <th scope="col">Phone Number</th>
@@ -48,9 +49,10 @@
             </tr>
             </thead>
             <tbody>
-            <c:forEach var="customer" items="${customerList}">
+            <c:forEach var="customer" items="${customerList}" varStatus="index">
                 <tr>
                         <%--<th scope="row">1</th>--%>
+                    <td>${index.index+1}</td>
                     <td>${customer.firstName}</td>
                     <td>${customer.lastName}</td>
                     <td>${customer.phoneNumber}</td>

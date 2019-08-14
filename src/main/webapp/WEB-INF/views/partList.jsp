@@ -38,6 +38,8 @@
         <table class="table table-striped table-dark">
             <thead class="thead-dark">
             <tr>
+
+                <th scope="col">#ID</th>
                 <th scope="col">Part name</th>
                 <th scope="col">Catalog number</th>
                 <th scope="col">Quantity</th>
@@ -45,9 +47,10 @@
             </tr>
             </thead>
             <tbody>
-            <c:forEach var="part" items="${partList}">
+            <c:forEach var="part" items="${partList}" varStatus="index">
                 <tr>
                         <%--<th scope="row">1</th>--%>
+                    <td>${index.index+1}</td>
                     <td>${part.name}</td>
                     <td>${part.catalogNumber}</td>
                     <td>${part.quantity}</td>

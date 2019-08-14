@@ -38,15 +38,17 @@
         <table class="table table-striped table-dark">
             <thead class="thead-dark">
             <tr>
+                <th scope="col">#ID</th>
                 <th scope="col">Brake Caliper</th>
                 <th>Details:</th>
                 <th scope="col"></th>
             </tr>
             </thead>
             <tbody>
-            <c:forEach var="brakeCaliper" items="${brakeCalipers}">
+            <c:forEach var="brakeCaliper" items="${brakeCalipers}" varStatus="index">
                 <tr>
                         <%--<th scope="row">1</th>--%>
+                    <td>${index.index+1}</td>
                     <td>${brakeCaliper.name}</td>
                     <td>
                         <a href="/brakeCaliper/show/${brakeCaliper.id}">

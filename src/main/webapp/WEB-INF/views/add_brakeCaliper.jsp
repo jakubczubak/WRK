@@ -29,44 +29,47 @@
 
 
     <div class="container margin my-4">
-
-        <h1><p class="text-primary">Add Brake Caliper <i class="fas fa-plus"></i></p></h1>
-        <form:form cssClass="form-group" method="post" modelAttribute="contactForm">
-            <%--<h3>Name:</h3> <form:input path="name" name="name" placeholder="10.6D.356x32" ></form:input>--%>
-
-
-            <div class="form-group ">
-                <label for="name">Name:</label>
-                <form:input path="name" type="text" class="form-control" id="name"
-                            placeholder="name e.c. 10.6D.356.32"/>
-                <form:errors path="name" cssClass="error" element="div"/>
-            </div>
+        <div id="content-wrapper">
+            <h1><p class="text-primary">Add Brake Caliper <i class="fas fa-plus"></i></p></h1>
+            <form:form cssClass="form-group" method="post" modelAttribute="contactForm">
+                <%--<h3>Name:</h3> <form:input path="name" name="name" placeholder="10.6D.356x32" ></form:input>--%>
 
 
-            <form:hidden path="id" name="id"></form:hidden>
+                <div class="form-group ">
+                    <label for="name">Name:</label>
+                    <form:input path="name" type="text" class="form-control" id="name"
+                                placeholder="name e.c. 10.6D.356.32"/>
+                    <form:errors path="name" cssClass="error" element="div"/>
+                </div>
 
-            <table class="table table-striped" style="margin-top: 10px">
-                <thead class="thead-dark">
-                <tr>
-                    <th>Part Name:</th>
-                    <th>Part Quantity:</th>
 
-                </tr>
-                </thead>
-                <tbody>
-                <c:forEach items="${contactForm.partName}" var="contactMap" varStatus="status">
+                <form:hidden path="id" name="id"></form:hidden>
+
+                <table class="table table-striped" style="margin-top: 10px">
+                    <thead class="thead-dark">
                     <tr>
-                        <td>${contactMap.key}</td>
-                        <td><input name="partName['${contactMap.key}']" value="${contactMap.value}"/></td>
+                        <th>Part Name:</th>
+                        <th>Part Quantity:</th>
 
                     </tr>
-                </c:forEach>
-                </tbody>
-            </table>
-            <br/>
-            <button type="submit" class="btn btn-block btn-primary">Save</button>
+                    </thead>
+                    <tbody>
+                    <c:forEach items="${contactForm.partName}" var="contactMap" varStatus="status">
+                        <tr>
+                            <td>${contactMap.key}</td>
+                            <td><input name="partName['${contactMap.key}']" value="${contactMap.value}"/></td>
 
-        </form:form>
+                        </tr>
+                    </c:forEach>
+                    </tbody>
+                </table>
+
+                <button type="submit" class="btn btn-block btn-primary">Save</button>
+
+            </form:form>
+        </div>
+
+
 
     </div>
 

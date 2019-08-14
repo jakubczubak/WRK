@@ -5,6 +5,7 @@ import pl.coderslab.app.brakeCaliper.BrakeCaliper;
 import pl.coderslab.app.customer.Customer;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
@@ -33,7 +34,21 @@ public class Order {
     @Transient
     private String car;
     private boolean isFinish;
+    @Column(name = "created_on")
+    private LocalDateTime createdOn;
+    @Column(name = "updated_on")
+    private LocalDateTime updatedOn;
 
+
+    @PrePersist
+    public void prePersist() {
+        createdOn = LocalDateTime.now();
+    }
+
+    @PreUpdate
+    public void preUpdate() {
+        updatedOn = LocalDateTime.now();
+    }
 
     public boolean isFinish() {
         return isFinish;
