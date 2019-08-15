@@ -20,7 +20,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 authorizeRequests()
                 .antMatchers("/resources/**").permitAll()
                 //do usuniecia
-//                .antMatchers("/**").permitAll()
+                .antMatchers("/**").permitAll()
                 .antMatchers("/myregistration").permitAll()
                 .antMatchers("/mylogin?success").permitAll()
                 .antMatchers("/mylogin").permitAll()
@@ -46,9 +46,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     public DriverManagerDataSource dataSource() {
         DriverManagerDataSource driverManagerDataSource = new DriverManagerDataSource();
         driverManagerDataSource.setDriverClassName("com.mysql.jdbc.Driver");
-        driverManagerDataSource.setUrl("jdbc:mysql://localhost:3306/WRK?serverTimezone=UTC");
-        driverManagerDataSource.setUsername("root");
-        driverManagerDataSource.setPassword("coderslab");
+        driverManagerDataSource.setUrl("jdbc:mysql://eu-cdbr-west-02.cleardb.net/heroku_e484ee0807cb498?reconnect=true");
+        driverManagerDataSource.setUsername("b78181a0cbdf71");
+        driverManagerDataSource.setPassword("5469c952");
         return driverManagerDataSource;
     }
 
