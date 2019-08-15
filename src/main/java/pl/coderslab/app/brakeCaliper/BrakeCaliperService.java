@@ -19,26 +19,26 @@ public class BrakeCaliperService {
     }
 
 
-    public Map<String, String> getDefaultMap() {
+    public Map<String, Integer> getDefaultMap() {
 
         List<Part> partList = partRepository.findAll();
-        Map<String, String> partMap = new HashMap<>();
+        Map<String, Integer> partMap = new HashMap<>();
         for (int i = 0; i < partList.size(); i++) {
-            partMap.put(partList.get(i).getName(), "0");
+            partMap.put(partList.get(i).getName(), 0);
         }
         return partMap;
     }
 
 
-    public Map<String, String> getMapWithOutEmptyValue(Map<String, String> map) {
+    public Map<String, Integer> getMapWithOutEmptyValue(Map<String, Integer> map) {
 
-        Map<String, String> newMap = map;
-        Iterator<Map.Entry<String, String>>
+        Map<String, Integer> newMap = map;
+        Iterator<Map.Entry<String, Integer>>
                 iterator = newMap.entrySet().iterator();
 
         while (iterator.hasNext()) {
             Map.Entry entry = iterator.next();
-            if ("0".equals(entry.getValue())) {
+            if (entry.getValue().equals(0)) {
                 iterator.remove();
             }
         }

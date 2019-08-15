@@ -16,14 +16,14 @@ public class BrakeCaliper {
     @ElementCollection
     @JoinTable(name = "BrakecaliperParts")
     @Column(name = "Quantity")
-    private Map<String, String> partName = new HashMap<String, String>();
+    private Map<String, Integer> partName = new HashMap<String, Integer>();
 
 
-    public Map<String, String> getPartName() {
+    public Map<String, Integer> getPartName() {
         return partName;
     }
 
-    public void setPartName(Map<String, String> contactMap) {
+    public void setPartName(Map<String, Integer> contactMap) {
         this.partName = contactMap;
     }
 

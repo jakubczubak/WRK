@@ -35,13 +35,17 @@ public class HomePageController {
 
     @RequestMapping("/")
     public String hello(Model model, HttpServletRequest request) {
+
         List<Order> orderList = orderRepository.findAll();
         List<Order> notFinishOrder = orderRepository.findAllByIsFinish(false);
+        List<Order> orderDoneList = orderRepository.findAllByIsFinish(false);
+        Order order = orderRepository.findFirstByIsFinishOrderByCreatedOnDesc(false);
         model.addAttribute("remoteUser", request.getRemoteUser());
         model.addAttribute("orderSize", orderList.size());
         model.addAttribute("notFinishOrderSize", notFinishOrder.size());
-        List<Order> orderDoneList = orderRepository.findAllByIsFinish(false);
         model.addAttribute("orderList", orderDoneList);
+        model.addAttribute("data",order);
+
         return "dashboard";
     }
 
