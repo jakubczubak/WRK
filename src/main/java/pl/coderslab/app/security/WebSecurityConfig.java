@@ -10,7 +10,6 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 
-
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
@@ -20,7 +19,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 authorizeRequests()
                 .antMatchers("/resources/**").permitAll()
                 //do usuniecia
-                .antMatchers("/**").permitAll()
+//                .antMatchers("/**").permitAll()
                 .antMatchers("/myregistration").permitAll()
                 .antMatchers("/mylogin?success").permitAll()
                 .antMatchers("/mylogin").permitAll()

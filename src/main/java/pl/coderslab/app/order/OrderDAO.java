@@ -7,6 +7,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
+import java.util.List;
 
 @Repository
 @Transactional
@@ -21,4 +23,14 @@ public class OrderDAO {
         Hibernate.initialize(order.getGalvanicCoating());
         return order;
     }
+
+    public List<Order> findAll() {
+        Query query = entityManager.createQuery("Select o from Order o");
+        List<Order> orderList = query.getResultList();
+        for (int i = 0; i < orderList.size(); i++) {
+            Hibernate.initialize(orderList.get(i).getBrakeCaliper().getPartName());
+        }
+        return orderList;
+    }
 }
+

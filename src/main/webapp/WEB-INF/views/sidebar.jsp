@@ -56,6 +56,12 @@
         </a>
 
     </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/warehouse/info" role="button">
+            <span><i class="fas fa-warehouse"></i> Necessary parts</span>
+        </a>
+
+    </li>
 
 
 </ul>
