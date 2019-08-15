@@ -11,6 +11,7 @@ import pl.coderslab.app.order.OrderRepository;
 import pl.coderslab.app.user.User;
 import pl.coderslab.app.user.UserRepository;
 import pl.coderslab.app.user.UserService;
+import pl.coderslab.app.warehouse.WarehouseService;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
@@ -21,16 +22,18 @@ import java.util.List;
 @SessionAttributes("remoteUser")
 public class HomePageController {
 
+    private WarehouseService warehouseService;
     private OrderDAO orderDAO;
     private UserRepository userRepository;
     private UserService userService;
     private OrderRepository orderRepository;
 
-    public HomePageController(UserRepository userRepository, UserService userService, OrderRepository orderRepository, OrderDAO orderDAO) {
+    public HomePageController(UserRepository userRepository, UserService userService, OrderRepository orderRepository, OrderDAO orderDAO, WarehouseService warehouseService) {
         this.userRepository = userRepository;
         this.userService = userService;
         this.orderRepository = orderRepository;
         this.orderDAO = orderDAO;
+        this.warehouseService = warehouseService;
     }
 
     @RequestMapping("/")
@@ -40,6 +43,8 @@ public class HomePageController {
         List<Order> notFinishOrder = orderRepository.findAllByIsFinish(false);
         List<Order> orderDoneList = orderRepository.findAllByIsFinish(false);
         Order order = orderRepository.findFirstByIsFinishOrderByCreatedOnDesc(false);
+        int numberOfPartsNeeded = warehouseService.getNumberOfPartsNeeded();
+        model.addAttribute("numberOfPartsNeeded", numberOfPartsNeeded);
         model.addAttribute("remoteUser", request.getRemoteUser());
         model.addAttribute("orderSize", orderList.size());
         model.addAttribute("notFinishOrderSize", notFinishOrder.size());

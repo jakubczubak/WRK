@@ -93,9 +93,9 @@
                             <div class="card-body-icon">
                                 <i class="fas fa-exclamation-triangle"></i>
                             </div>
-                            <div class="mr-5">13 Complaint</div>
+                            <div class="mr-5">${numberOfPartsNeeded} Parts to order</div>
                         </div>
-                        <a class="card-footer text-white clearfix small z-1" href="#">
+                        <a class="card-footer text-white clearfix small z-1" href="/warehouse/info">
                             <span class="float-left">View Details</span>
                             <span class="float-right">
                 </span>
