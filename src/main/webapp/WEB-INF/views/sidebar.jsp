@@ -62,6 +62,12 @@
         </a>
 
     </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/chart/pieChart" role="button">
+            <span><i class="fas fa-chart-pie"></i> Chart</span>
+        </a>
+
+    </li>
 
 
 </ul>
