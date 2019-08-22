@@ -40,13 +40,8 @@ insert into WRK.parts (catalogNumber, name, quantity, type) VALUE ("WRK", "WZMOC
 insert into WRK.parts (catalogNumber, name, quantity, type) VALUE ("WRK", "WZMOCNIENIE L74", "100", "Wzmocnienie");
 
 
-insert into WRK.customers(NIP, PESEL, companyName, email, firstName, lastName, phoneNumber) VALUE ("52132312312321","12233341124","CodersLAB","test@test.pl","Sebastian","Taflinski","212312444")
-insert into WRK.customers(NIP, PESEL, companyName, email, firstName, lastName, phoneNumber) VALUE ("52132312312321","12233341124","CodersLAB","test@test.pl","Bartek","Ostalowski","321123321")
-insert into WRK.customers(NIP, PESEL, companyName, email, firstName, lastName, phoneNumber) VALUE ("52132312312321","12233341124","CodersLAB","test@test.pl","Maciek","Kozan","456654445")
-insert into WRK.customers(NIP, PESEL, companyName, email, firstName, lastName, phoneNumber) VALUE ("52132312312321","12233341124","CodersLAB","test@test.pl","Dawid","Komar","654445666")
-insert into WRK.customers(NIP, PESEL, companyName, email, firstName, lastName, phoneNumber) VALUE ("52132312312321","12233341124","CodersLAB","test@test.pl","Kuba","Mielnik","765858555")
-insert into WRK.customers(NIP, PESEL, companyName, email, firstName, lastName, phoneNumber) VALUE ("52132312312321","12233341124","CodersLAB","test@test.pl","Artur","Saniv","978778999")
-insert into WRK.customers(NIP, PESEL, companyName, email, firstName, lastName, phoneNumber) VALUE ("52132312312321","12233341124","CodersLAB","test@test.pl","Adam","Budny","789567333")
-insert into WRK.customers(NIP, PESEL, companyName, email, firstName, lastName, phoneNumber) VALUE ("52132312312321","12233341124","CodersLAB","test@test.pl","Kamil","Luszczak","233444")
-insert into WRK.customers(NIP, PESEL, companyName, email, firstName, lastName, phoneNumber) VALUE ("52132312312321","12233341124","CodersLAB","test@test.pl","Franek","Papierowy","223445552")
-insert into WRK.customers(NIP, PESEL, companyName, email, firstName, lastName, phoneNumber) VALUE ("52132312312321","12233341124","CodersLAB","test@test.pl","Artur","Hacia","234123111")
+insert into WRK.customers(NIP, PESEL, companyName, email, firstName, lastName, phoneNumber) VALUE ("113123123","12233341124","CodersLAB","test@test.pl","Sebastian","Taflinski","212312444");
+insert into WRK.customers(NIP, PESEL, companyName, email, firstName, lastName, phoneNumber) VALUE ("222333111","12233341124","CodersLAB","test@test.pl","Bartek","Ostalowski","321123321");
+insert into WRK.customers(NIP, PESEL, companyName, email, firstName, lastName, phoneNumber) VALUE ("411235511","12233341124","CodersLAB","test@test.pl","Maciek","Kozan","456654445");
+insert into WRK.customers(NIP, PESEL, companyName, email, firstName, lastName, phoneNumber) VALUE ("222311123","12233341124","CodersLAB","test@test.pl","Dawid","Komar","654445666");
+insert into WRK.customers(NIP, PESEL, companyName, email, firstName, lastName, phoneNumber) VALUE ("112331233","12233341124","CodersLAB","test@test.pl","Kuba","Mielnik","765858555");

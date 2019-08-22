@@ -14,7 +14,7 @@
     <!-- Custom styles for this template-->
     <link href='<c:url value="/resources/css/style.css"/>' rel="stylesheet" type="text/css">
     <script src="https://kit.fontawesome.com/c395dd8104.js"></script>
-    </head>
+</head>
 
 <body id="page-top">
 <!-- NAVBAR -->
@@ -61,9 +61,9 @@
                             <div class="card-body-icon">
                                 <i class="fas fa-fw fa-list"></i>
                             </div>
-                            <div class="mr-5">11 New Tasks</div>
+                            <div class="mr-5">${numberOfTask} New Tasks</div>
                         </div>
-                        <a class="card-footer text-white clearfix small z-1" href="#">
+                        <a class="card-footer text-white clearfix small z-1" href="/task/all">
                             <span class="float-left">View Details</span>
                             <span class="float-right">
                   <i class="fas fa-angle-right"></i>
@@ -146,7 +146,8 @@
 
                                 <td>
                                     <a href="/order/details/${order.id}">
-                                        <button type="button" class="btn btn-primary"><i class="fas fa-question-circle"></i>
+                                        <button type="button" class="btn btn-primary"><i
+                                                class="fas fa-question-circle"></i>
                                         </button>
                                     </a>
                                     <a href="/edit/${order.id}">

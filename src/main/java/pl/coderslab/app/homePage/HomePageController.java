@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import pl.coderslab.app.order.Order;
 import pl.coderslab.app.order.OrderDAO;
 import pl.coderslab.app.order.OrderRepository;
+import pl.coderslab.app.toDoList.TaskRepository;
 import pl.coderslab.app.user.User;
 import pl.coderslab.app.user.UserRepository;
 import pl.coderslab.app.user.UserService;
@@ -27,13 +28,16 @@ public class HomePageController {
     private UserRepository userRepository;
     private UserService userService;
     private OrderRepository orderRepository;
+    private TaskRepository taskRepository;
 
-    public HomePageController(UserRepository userRepository, UserService userService, OrderRepository orderRepository, OrderDAO orderDAO, WarehouseService warehouseService) {
+    public HomePageController(UserRepository userRepository, UserService userService, OrderRepository orderRepository,
+                              OrderDAO orderDAO, WarehouseService warehouseService, TaskRepository taskRepository) {
         this.userRepository = userRepository;
         this.userService = userService;
         this.orderRepository = orderRepository;
         this.orderDAO = orderDAO;
         this.warehouseService = warehouseService;
+        this.taskRepository=taskRepository;
     }
 
     @RequestMapping("/")
@@ -43,6 +47,7 @@ public class HomePageController {
         List<Order> notFinishOrder = orderRepository.findAllByIsFinish(false);
         List<Order> orderDoneList = orderRepository.findAllByIsFinish(false);
         Order order = orderRepository.findFirstByIsFinishOrderByCreatedOnDesc(false);
+        int numberOfTask = taskRepository.findAll().size();
         int numberOfPartsNeeded = warehouseService.getNumberOfPartsNeeded();
         model.addAttribute("numberOfPartsNeeded", numberOfPartsNeeded);
         model.addAttribute("remoteUser", request.getRemoteUser());
@@ -50,6 +55,7 @@ public class HomePageController {
         model.addAttribute("notFinishOrderSize", notFinishOrder.size());
         model.addAttribute("orderList", orderDoneList);
         model.addAttribute("data",order);
+        model.addAttribute("numberOfTask", numberOfTask);
 
         return "dashboard";
     }
