@@ -6,14 +6,17 @@
 WRK is a training project that help management orders in company which is selling brake calipers.
 
 ##Technologies:
-*Java 8
-*Spring
-*Spring Security
-*Spring Data
-*Hibernate
-*Bootstrap 4
-*MySQL
-*Maven
+<ul>
+<li>Java 8
+<li>Spring
+<li>Spring Security
+<li>Spring Data
+<li>Hibernate
+<li>Bootstrap 4
+<li>MySQL
+<li>Maven
+</ul>
+
 
 ## Launch
 1. Clone repository to IDE.
@@ -31,3 +34,4 @@ WRK is a training project that help management orders in company which is sellin
 
 ##Sources
 This app is inspired by daily work.
+ 
