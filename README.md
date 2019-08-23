@@ -1,9 +1,15 @@
 # WRK
-PROJEKT KONCOWY(PROJEKT DO OBSLUGI ZAMOWIEN WRK Brakes).
+Order Management System
 
-# Technologie: 
--Spring Framework<br>
--HIBERNATE<br>
--JSP<br>
--HTML<br> -CSS<br> -BootStrap
+# Description:
+
+WRK is a project that help management orders in company which is selling brake calipers.
+
+#Screenshots:
+![Screenshot from 2019-08-23 16-00-38](https://user-images.githubusercontent.com/45847111/63598947-dc2f7080-c5c0-11e9-9a4a-e9aa4ff0d4f7.png)
+![Screenshot from 2019-08-23 16-06-01](https://user-images.githubusercontent.com/45847111/63598949-ddf93400-c5c0-11e9-8e73-2dc014fdf7d2.png)
+![Screenshot from 2019-08-23 16-06-20](https://user-images.githubusercontent.com/45847111/63598952-dfc2f780-c5c0-11e9-99be-616a6144acbe.png)
+![Screenshot from 2019-08-23 16-06-36](https://user-images.githubusercontent.com/45847111/63598955-e0f42480-c5c0-11e9-9530-df597ba606f8.png)
+![Screenshot from 2019-08-23 16-07-28](https://user-images.githubusercontent.com/45847111/63598958-e2bde800-c5c0-11e9-8eca-974b779a1c50.png)
+![Screenshot from 2019-08-23 16-11-09](https://user-images.githubusercontent.com/45847111/63598961-e487ab80-c5c0-11e9-9f5f-85ef2b1e9e2d.png)
 

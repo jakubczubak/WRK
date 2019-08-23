@@ -63,14 +63,14 @@
 
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="/chart/pieChart" role="button">
-            <span><i class="fas fa-chart-pie"></i> Chart</span>
+        <a class="nav-link" href="/task/all" role="button">
+            <span><i class="fas fa-clipboard-list"></i> TASKS</span>
         </a>
 
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="/task/all" role="button">
-            <span><i class="fas fa-clipboard-list"></i> TASKS</span>
+        <a class="nav-link" href="/chart/pieChart" role="button">
+            <span><i class="fas fa-chart-pie"></i> Chart</span>
         </a>
 
     </li>

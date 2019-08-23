@@ -19,7 +19,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 authorizeRequests()
                 .antMatchers("/resources/**").permitAll()
                 //do usuniecia
-       .antMatchers("/**").permitAll()
+//       .antMatchers("/**").permitAll()
                 .antMatchers("/myregistration").permitAll()
                 .antMatchers("/mylogin?success").permitAll()
                 .antMatchers("/mylogin").permitAll()
