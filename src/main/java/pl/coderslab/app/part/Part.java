@@ -1,7 +1,6 @@
 package pl.coderslab.app.part;
 
 
-
 import javax.persistence.*;
 import javax.validation.constraints.DecimalMin;
 import javax.validation.constraints.NotEmpty;

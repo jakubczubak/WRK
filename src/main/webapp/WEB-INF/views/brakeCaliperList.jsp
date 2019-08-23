@@ -52,7 +52,8 @@
                     <td>${brakeCaliper.name}</td>
                     <td>
                         <a href="/brakeCaliper/show/${brakeCaliper.id}">
-                            <button type="button" class="btn btn-primary"><i class="fas fa-question-circle"></i></button>
+                            <button type="button" class="btn btn-primary"><i class="fas fa-question-circle"></i>
+                            </button>
                         </a>
                     </td>
                     <td>

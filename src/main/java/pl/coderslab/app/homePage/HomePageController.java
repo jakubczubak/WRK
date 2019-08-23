@@ -37,7 +37,7 @@ public class HomePageController {
         this.orderRepository = orderRepository;
         this.orderDAO = orderDAO;
         this.warehouseService = warehouseService;
-        this.taskRepository=taskRepository;
+        this.taskRepository = taskRepository;
     }
 
     @RequestMapping("/")
@@ -54,7 +54,7 @@ public class HomePageController {
         model.addAttribute("orderSize", orderList.size());
         model.addAttribute("notFinishOrderSize", notFinishOrder.size());
         model.addAttribute("orderList", orderDoneList);
-        model.addAttribute("data",order);
+        model.addAttribute("data", order);
         model.addAttribute("numberOfTask", numberOfTask);
 
         return "dashboard";

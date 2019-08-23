@@ -4,6 +4,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import pl.coderslab.app.role.Role;
 import pl.coderslab.app.role.RoleRepository;
+
 import java.util.Arrays;
 import java.util.HashSet;
 

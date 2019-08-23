@@ -28,7 +28,7 @@ WRK is a training project that help management orders in company which is sellin
 5. RUN&FUN :)
 
 
-##Illustrations
+##Illustrations:
 ![Screenshot from 2019-08-23 16-00-38](https://user-images.githubusercontent.com/45847111/63598947-dc2f7080-c5c0-11e9-9a4a-e9aa4ff0d4f7.png)
 ![Screenshot from 2019-08-23 17-02-19](https://user-images.githubusercontent.com/45847111/63602944-e0f82280-c5c8-11e9-8f3a-6bd7e31f5ff0.png)
 ![Screenshot from 2019-08-23 16-06-01](https://user-images.githubusercontent.com/45847111/63598949-ddf93400-c5c0-11e9-8e73-2dc014fdf7d2.png)

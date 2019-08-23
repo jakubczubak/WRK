@@ -16,7 +16,7 @@
     <link href='<c:url value="/resources/css/style.css"/>' rel="stylesheet" type="text/css">
     <script src="https://kit.fontawesome.com/c395dd8104.js"></script>
     <script type="text/javascript">
-        window.onload = function() {
+        window.onload = function () {
 
             var dps = [[]];
             var chart = new CanvasJS.Chart("chartContainer", {
@@ -45,8 +45,8 @@
             yValue = parseFloat("${dataPoint.y}");
             label = "${dataPoint.label}";
             dps[parseInt("${loop.index}")].push({
-                label : label,
-                y : yValue,
+                label: label,
+                y: yValue,
             });
             </c:forEach>
             </c:forEach>

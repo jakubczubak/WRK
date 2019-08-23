@@ -2,6 +2,7 @@ package pl.coderslab.app.role;
 
 
 import pl.coderslab.app.user.User;
+
 import javax.persistence.*;
 import java.util.Set;
 

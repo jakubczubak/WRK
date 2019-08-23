@@ -65,7 +65,8 @@
 
                     <td>
                         <a href="/order/details/${order.id}">
-                            <button type="button" class="btn btn-primary"><i class="fas fa-question-circle"></i></button>
+                            <button type="button" class="btn btn-primary"><i class="fas fa-question-circle"></i>
+                            </button>
                         </a>
                     </td>
 

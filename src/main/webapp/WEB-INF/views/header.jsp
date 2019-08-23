@@ -1,4 +1,3 @@
-
 <link href="https://fonts.googleapis.com/css?family=Frijole&display=swap" rel="stylesheet">
 
 <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
@@ -6,13 +5,13 @@
     <a class="navbar-brand mr-1" href="/"> </a>
 
 
-
     <ul class="navbar-nav ml-auto " style="margin-left:auto">
 
 
         <li class="nav-item dropdown no-arrow">
-            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <i class="far fa-user" style="color: white">  ${remoteUser}</i>
+            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
+               aria-haspopup="true" aria-expanded="false">
+                <i class="far fa-user" style="color: white"> ${remoteUser}</i>
             </a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
                 <a class="dropdown-item" href="/user/edit">Settings</a>

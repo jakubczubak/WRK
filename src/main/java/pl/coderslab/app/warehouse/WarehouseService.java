@@ -46,7 +46,7 @@ public class WarehouseService {
                 if (entry.getKey().equals(partList.get(i).getName())) {
                     Integer mapValue = (Integer) entry.getValue();
                     Integer partValue = (Integer) partList.get(i).getQuantity();
-                    entry.setValue(mapValue-partValue);
+                    entry.setValue(mapValue - partValue);
 
                 }
             }
@@ -56,8 +56,8 @@ public class WarehouseService {
         return generalMap;
     }
 
-    public int getNumberOfPartsNeeded(){
-        Map<String,Integer> map = getListAllNeedParts();
+    public int getNumberOfPartsNeeded() {
+        Map<String, Integer> map = getListAllNeedParts();
 
         int counter = 0;
 
@@ -66,14 +66,14 @@ public class WarehouseService {
         while (iterator.hasNext()) {
             Map.Entry entry = iterator.next();
             if ((Integer) entry.getValue() > 0) {
-           counter++;
+                counter++;
 
-                }
             }
-return counter;
         }
-
+        return counter;
     }
+
+}
 
 
 

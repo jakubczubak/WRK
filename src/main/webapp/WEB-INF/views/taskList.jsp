@@ -44,7 +44,7 @@
                 <th scope="col">Task name</th>
                 <th scope="col">Task description</th>
                 <th scope="col"></th>
-                <th scope="col"> <a href="/task/add">
+                <th scope="col"><a href="/task/add">
                     <button type="button" class="btn btn-primary"><i class="fas fa-plus"></i> Add Task</button>
                 </a></th>
             </tr>
