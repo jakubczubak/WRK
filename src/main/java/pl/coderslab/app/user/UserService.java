@@ -32,4 +32,14 @@ public class UserService {
         user.setRole(new HashSet<Role>(Arrays.asList(userRole)));
         userRepository.save(user);
     }
+
+    public void saveUserWhenPasswordIsNotEdit(User user) {
+        Long userId = user.getId();
+        String oldPassword = userRepository.findById(user.getId()).get().getPassword();
+        user.setPassword(oldPassword);
+        user.setActive(1);
+        Role userRole = roleRepository.findByRole("ADMIN");
+        user.setRole(new HashSet<Role>(Arrays.asList(userRole)));
+        userRepository.save(user);
+    }
 }

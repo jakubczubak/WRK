@@ -51,19 +51,21 @@
                 <label for="exampleInputLastName">Last Name:</label>
                 <form:input path="lastName" type="text" name="lastName" class="form-control" id="exampleInputLastName"
                             aria-describedby="emailHelp" placeholder="Last name"/>
-                <form:errors path="firstName" cssClass="error" element="div"/>
+                <form:errors path="lastName" cssClass="error" element="div"/>
             </div>
             <div class="form-group">
                 <label for="exampleInputEmail">Contact e-mail:</label>
                 <form:input path="email" readonly="true" type="text" name="email" class="form-control"
                             id="exampleInputEmail"
                             aria-describedby="emailHelp" placeholder="E-mail"/>
+                <form:errors path="email" cssClass="error" element="div"/>
+
             </div>
             <div class="form-group">
                 <label for="exampleInputEmail">Password:</label>
                 <form:input path="password" type="password" name="password" class="form-control" id="exampleInputEmail"
                             aria-describedby="emailHelp" placeholder="Password"/>
-                <form:errors path="firstName" cssClass="error" element="div"/>
+                <form:errors path="password" cssClass="error" element="div"/>
                 <form:hidden path="id"/><br>
                 <button type="submit" class="btn btn-block btn-primary my-4">Save changes!</button>
             </div>
