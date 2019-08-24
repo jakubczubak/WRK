@@ -6,9 +6,10 @@
     <persistence-unit name="wrkPersistenceUnit">
         <properties>
             <property name="javax.persistence.jdbc.url"
-                      value="jdbc:mysql://localhost:3306/WRK?serverTimezone=UTC"/>
-            <property name="javax.persistence.jdbc.user" value="root"/>
-            <property name="javax.persistence.jdbc.password" value="coderslab"/>
+                      value="jdbc:mysql://b9a5a38b083d21:cc66ecc2@us-cdbr-iron-east-02.cleardb.net/heroku_8baac64cc903001?reconnect=true"/>
+
+            <property name="javax.persistence.jdbc.user" value="b9a5a38b083d21"/>
+            <property name="javax.persistence.jdbc.password" value="cc66ecc2"/>
             <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
             <property name="javax.persistence.schema-generation.database.action"
                       value="create-drop"/>
