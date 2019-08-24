@@ -29,7 +29,7 @@
         <failOnMissingWebXml>false</failOnMissingWebXml>
     </properties>
 
-    <!--<packaging>war</packaging>-->
+    <packaging>war</packaging>
 
     <dependencies>
         <!-- https://mvnrepository.com/artifact/org.springframework/spring-context -->
