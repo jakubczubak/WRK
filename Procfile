@@ -1,0 +1,1 @@
+web: java -Dserver.port=$PORT -war target/WRK-1.0-SNAPSHOT.war
