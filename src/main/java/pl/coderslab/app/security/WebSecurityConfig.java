@@ -45,9 +45,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     public DriverManagerDataSource dataSource() {
         DriverManagerDataSource driverManagerDataSource = new DriverManagerDataSource();
         driverManagerDataSource.setDriverClassName("com.mysql.jdbc.Driver");
-        driverManagerDataSource.setUrl("jdbc:mysql://localhost:3306/WRK?serverTimezone=UTC");
-        driverManagerDataSource.setUsername("root");
-        driverManagerDataSource.setPassword("coderslab");
+        driverManagerDataSource.setUrl("jdbc:mysql://us-cdbr-iron-east-02.cleardb.net/heroku_8baac64cc903001?reconnect=true");
+        driverManagerDataSource.setUsername("b9a5a38b083d21");
+        driverManagerDataSource.setPassword("cc66ecc2");
         return driverManagerDataSource;
     }
 
