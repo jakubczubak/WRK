@@ -6,7 +6,7 @@
     <persistence-unit name="wrkPersistenceUnit">
         <properties>
             <property name="javax.persistence.jdbc.url"
-                      value="jdbc:mysql://b9a5a38b083d21:cc66ecc2@us-cdbr-iron-east-02.cleardb.net/heroku_8baac64cc903001?reconnect=true"/>
+                      value="jdbc:mysql://us-cdbr-iron-east-02.cleardb.net/heroku_8baac64cc903001?reconnect=true"/>
 
             <property name="javax.persistence.jdbc.user" value="b9a5a38b083d21"/>
             <property name="javax.persistence.jdbc.password" value="cc66ecc2"/>
