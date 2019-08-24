@@ -45,7 +45,7 @@ public class UserController {
         if (result.hasErrors()) {
             return "user";
         }
-
+//grupy walidacji zastosowac
         if ("password".equals(user.getPassword())) {
             userService.saveUserWhenPasswordIsNotEdit(user);
         } else {
