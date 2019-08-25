@@ -109,7 +109,7 @@ public class HomePageController {
     @GetMapping("/finish/{index}")
     public String finishOrder(@PathVariable("index") Long id) {
         Order existOrder = orderDAO.findById(id);
-        existOrder.setFinish(true);
+//        existOrder.setFinish(true);
         orderRepository.save(existOrder);
         return "redirect:/";
     }
