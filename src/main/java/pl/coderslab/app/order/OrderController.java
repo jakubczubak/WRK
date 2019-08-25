@@ -37,7 +37,7 @@ public class OrderController {
 
     @PostMapping("/add")
     public String addOrderProcess(@ModelAttribute Order order) {
-//        order.setFinish(false);
+        order.setFinish(false);
         orderRepository.save(order);
         return "redirect:/order/all";
     }
@@ -72,7 +72,7 @@ public class OrderController {
     @GetMapping("/finish/{index}")
     public String finishOrder(@PathVariable("index") Long id) {
         Order existOrder = orderDAO.findById(id);
-//        existOrder.setFinish(true);
+        existOrder.setFinish(true);
         orderRepository.save(existOrder);
         return "redirect:/order/all";
     }
@@ -80,7 +80,7 @@ public class OrderController {
     @GetMapping("/notFinish/{index}")
     public String notFinishOrder(@PathVariable("index") Long id) {
         Order existOrder = orderDAO.findById(id);
-//        existOrder.setFinish(false);
+        existOrder.setFinish(false);
         orderRepository.save(existOrder);
         return "redirect:/order/all";
     }
