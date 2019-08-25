@@ -21,11 +21,8 @@ WRK is a training project that help management orders in company which is sellin
 
 
 ## Launch
-1. Clone repository to IDE.
-2. Configure your tomcat.
-3. Configure persistence.xml file to connect properly to DB.
-4. In WebSecurityConfig.class edit Bean("dataSource") and set properly data for DB connection.
-5. RUN&FUN :)
+
+http://wrkbrakes.herokuapp.com/
 
 
 ##Illustrations:
