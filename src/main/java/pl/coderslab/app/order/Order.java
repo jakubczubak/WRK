@@ -5,6 +5,8 @@ import pl.coderslab.app.brakeCaliper.BrakeCaliper;
 import pl.coderslab.app.customer.Customer;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -14,8 +16,10 @@ public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @NotNull(message = "Select Customer!")
     @OneToOne
     private Customer customer;
+    @NotNull(message = "Select Brake Caliper!")
     @OneToOne
     private BrakeCaliper brakeCaliper;
     private String color;

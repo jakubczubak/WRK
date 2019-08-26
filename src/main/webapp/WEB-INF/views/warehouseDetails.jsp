@@ -28,17 +28,18 @@
 
     <div id="content-wrapper">
         <div class="container margin my-4">
-            <h3><i class="fas fa-warehouse"></i> Necessary parts:</h3>
+            <div class="alert alert-primary" role="alert">
+                <b>NEGATIVE</b> quantity means the part is in stock!
+            </div>
+            <div class="alert alert-danger" role="alert">
+                <b>POSITIVE</b> quantity means that there is <b>NO PART</b>  in stock!
+            </div>
+
             <table class="table table-dark">
                 <thead class="thead-dark">
                 <tr>
                     <th>Part Name:</th>
                     <th>Part Quantity:</th>
-                    <th>
-                        <a href="/warehouse/details">
-                        <button type="button" class="btn btn-primary"><i class="fas fa-info-circle"></i> Details</button>
-                    </a>
-                    </th>
                 </tr>
                 </thead>
                 <tbody>

@@ -5,11 +5,21 @@
              version="2.1">
     <persistence-unit name="wrkPersistenceUnit">
         <properties>
-            <property name="javax.persistence.jdbc.url"
-                      value="jdbc:mysql://remotemysql.com/PyMLLssEsl?reconnect=true"/>
 
-            <property name="javax.persistence.jdbc.user" value="PyMLLssEsl"/>
-            <property name="javax.persistence.jdbc.password" value="xFHTjHLZtC"/>
+            <!--&lt;!&ndash;//REMOTESQL&ndash;&gt;-->
+            <!--<property name="javax.persistence.jdbc.url"-->
+                      <!--value="jdbc:mysql://remotemysql.com/PyMLLssEsl?reconnect=true"/>-->
+                      <!--<property name="javax.persistence.jdbc.user" value="PyMLLssEsl"/>-->
+                      <!--<property name="javax.persistence.jdbc.password" value="xFHTjHLZtC"/>-->
+
+
+            <!--//LOCALSQL-->
+            <property name="javax.persistence.jdbc.url"
+                      value="jdbc:mysql://localhost:3306/WRK?serverTimezone=UTC"/>
+            <property name="javax.persistence.jdbc.user" value="root"/>
+            <property name="javax.persistence.jdbc.password" value="coderslab"/>
+
+
             <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
             <property name="javax.persistence.schema-generation.database.action"
                       value="create-drop"/>

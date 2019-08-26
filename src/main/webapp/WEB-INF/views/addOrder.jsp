@@ -43,6 +43,8 @@
                     <label for="brakecaliper">Select brake caliper:</label>
                     <form:select path="brakeCaliper.id" items="${brakeCalipers}"
                                  itemValue="id" itemLabel="name" id="brakecaliper" class="form-control"/>
+                    <form:errors path="brakeCaliper" cssClass="error" element="div"/>
+
                 </div>
                 <div class="form-group">
                     <label for="carBrand">Car Brand:</label>

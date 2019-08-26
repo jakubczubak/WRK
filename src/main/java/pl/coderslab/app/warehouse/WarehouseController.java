@@ -24,8 +24,15 @@ public class WarehouseController {
     @GetMapping("/info")
     public String getInfo(Model model) {
 
-        model.addAttribute("partMap", warehouseService.getListAllNeedParts());
+        model.addAttribute("partMap", warehouseService.getPartListToBuy());
 
         return "warehouse";
+    }
+
+    @GetMapping("/details")
+    public String getDetails(Model model){
+        model.addAttribute("partMap", warehouseService.getListAllNeedParts());
+
+        return "warehouseDetails";
     }
 }

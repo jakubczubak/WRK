@@ -2,12 +2,14 @@ package pl.coderslab.app.order;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import pl.coderslab.app.brakeCaliper.BrakeCaliper;
 import pl.coderslab.app.brakeCaliper.BrakeCaliperRepository;
 import pl.coderslab.app.customer.Customer;
 import pl.coderslab.app.customer.CustomerReposiotry;
 
+import javax.validation.Valid;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -36,7 +38,10 @@ public class OrderController {
     }
 
     @PostMapping("/add")
-    public String addOrderProcess(@ModelAttribute Order order) {
+    public String addOrderProcess(@ModelAttribute @Valid Order order, BindingResult result) {
+        if(result.hasErrors()){
+            return "addOrder";
+        }
         order.setFinish(false);
         orderRepository.save(order);
         return "redirect:/order/all";

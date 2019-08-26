@@ -9,6 +9,7 @@ import pl.coderslab.app.order.OrderDAO;
 import pl.coderslab.app.part.Part;
 import pl.coderslab.app.part.PartRepository;
 
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -28,7 +29,7 @@ public class WarehouseService {
 
     public Map<String, Integer> getListAllNeedParts() {
 
-        Map<String, Integer> generalMap = brakeCaliperService.getDefaultMap();
+        Map<String, Integer> generalMap = new HashMap<>();
         List<Order> orderList = orderDAO.findAll();
 
         for (int i = 0; i < orderList.size(); i++) {
@@ -54,6 +55,20 @@ public class WarehouseService {
         }
 
         return generalMap;
+    }
+
+    public Map<String, Integer> getPartListToBuy(){
+        Map<String,Integer> map = getListAllNeedParts();
+        Iterator<Map.Entry<String,Integer>>
+                iteratot = map.entrySet().iterator();
+        while(iteratot.hasNext()){
+            Map.Entry entry = iteratot.next();
+
+            if((Integer)entry.getValue()<0){
+                iteratot.remove();
+            }
+        }
+        return map;
     }
 
     public int getNumberOfPartsNeeded() {
