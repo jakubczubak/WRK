@@ -56,13 +56,15 @@
                     <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
 
 
-
-                    <button style="margin-top: 10px" type="submit" class="btn btn btn-primary btn-block">CREATE ACCOUNT</button>
+                    <button style="margin-top: 20px" type="submit" class="btn btn btn-primary btn-block">CREATE
+                        ACCOUNT
+                    </button>
                 </div>
             </form:form>
 
             <a href="/mylogin">
-                <button style="margin-top: 10px"  class="btn btn btn-secondary btn-block"><i class="fas fa-arrow-left"></i></button>
+                <button  class="btn btn btn-secondary btn-block"><i
+                        class="fas fa-arrow-left"></i></button>
             </a>
         </div>
 
