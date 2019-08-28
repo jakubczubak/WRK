@@ -21,7 +21,7 @@
         </li>
     </ul>
     <form class="navbar-form " method=post action="/logout">
-        <button type="submit" class="btn btn-success">Logout <i class="fas fa-sign-out-alt"></i></button>
+        <button type="submit" class="btn btn-success">Sign out <i class="fas fa-sign-out-alt"></i></button>
         <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
     </form>
 </nav>

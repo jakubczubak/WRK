@@ -12,12 +12,13 @@
     <title>WRK Brakes</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/c395dd8104.js"></script>
 </head>
 <body class="d-flex justify-content-center">
 <div class="col-lg-3">
 
     <div style="margin-top: 150px">
-        <div style="margin-bottom: 40px" class="ml-xl-5">
+        <div style="margin-bottom: 60px" class="ml-xl-5">
             <img src="http://wrkbrakes.com/wp-content/uploads/2018/02/WRK-LOGO2.png">
         </div>
         <form method="post" action="/mylogin">
@@ -40,28 +41,40 @@
 </div>
 </c:if>
 
-<h1><p class="text-success">Log in </p></h1>
-<div class="form-group">
-    <label for="exampleInputEmail1">Email</label>
-    <input type="text" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-           placeholder="email">
-    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+
+<div class="col-auto">
+    <label class="sr-only" for="inlineFormInputGroup">Email</label>
+    <div class="input-group mb-2">
+        <div class="input-group-prepend">
+            <div class="input-group-text"><i class="fas fa-at"></i></div>
+        </div>
+        <input type="text" name="email" class="form-control" id="inlineFormInputGroup" placeholder="Username">
+    </div>
+</div>
+<div class="col-auto">
+
+    <label class="sr-only" for="inlineFormInputGroupPassword">Password</label>
+
+    <div class="input-group mb-2">
+        <div class="input-group-prepend">
+            <div class="input-group-text"><i class="fas fa-lock"></i></div>
+        </div>
+        <input type="password" name="password" class="form-control" id="inlineFormInputGroupPassword"
+               placeholder="Password">
+    </div>
 </div>
 <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
 
-    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
-    <div style="margin-top: 10px" class="form-check">
-        <input type="checkbox" name="rememberMe" class="form-check-input" id="exampleCheck1">
-        <label class="form-check-label" for="exampleCheck1">Remember me</label>
-    </div>
-    <button style="margin-top: 10px" type="submit" class="btn btn btn-primary btn-block">Login</button>
-    <a class="btn btn-success btn-block" href="/myregistration">Register!</a>
+
+    <button style="margin-top: 20px" type="submit" class="btn btn btn-primary btn-block">Log in</button>
+    <a class="btn btn-success btn-block" href="/myregistration">Sign Up</a>
 
 
     </form>
+
+
 </div>
 </div>
+
 </body>
 </html>

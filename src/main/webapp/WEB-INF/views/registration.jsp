@@ -25,11 +25,11 @@
                 <img src="http://wrkbrakes.com/wp-content/uploads/2018/02/WRK-LOGO2.png">
             </div>
             <form:form method="post" action="/myregistration" modelAttribute="user">
-                <h1><p class="text-success">Registration <i class="fas fa-address-card"></i></p></h1>
+                <h6><p class="text-primary">Sign up and experience WRK today </p></h6>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Email</label>
                     <form:input path="email" type="text" name="email" class="form-control" id="exampleInputEmail1"
-                                aria-describedby="emailHelp" placeholder="Email"/>
+                                aria-describedby="emailHelp" placeholder="Email address"/>
                     <form:errors path="email" cssClass="error" element="div"/>
                     <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.
                     </small>
@@ -57,7 +57,7 @@
 
 
 
-                    <button style="margin-top: 10px" type="submit" class="btn btn btn-primary btn-block">Submit</button>
+                    <button style="margin-top: 10px" type="submit" class="btn btn btn-primary btn-block">CREATE ACCOUNT</button>
                 </div>
             </form:form>
 
