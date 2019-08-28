@@ -19,8 +19,8 @@
 </head>
 <body class="d-flex justify-content-center">
 <div class="col-lg-2">
-    <div style="margin-top: 150px">
-        <div style="margin-top: 150px">
+    <div style="margin-top: 30px">
+        <div style="margin-top: 100px">
             <div class="margin-custom">
                 <img src="http://wrkbrakes.com/wp-content/uploads/2018/02/WRK-LOGO2.png">
             </div>
@@ -55,9 +55,15 @@
                     <form:errors path="password" cssClass="error" element="div"/>
                     <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
 
+
+
                     <button style="margin-top: 10px" type="submit" class="btn btn btn-primary btn-block">Submit</button>
                 </div>
             </form:form>
+
+            <a href="/mylogin">
+                <button style="margin-top: 10px"  class="btn btn btn-secondary btn-block"><i class="fas fa-arrow-left"></i></button>
+            </a>
         </div>
 
     </div>
