@@ -39,6 +39,11 @@
                         <button type="button" class="btn btn-primary"><i class="fas fa-info-circle"></i> Details</button>
                     </a>
                     </th>
+                    <th>
+                        <a href="/report/getreport/?type=xls">
+                            <button type="button" class="btn btn-primary"><i class="far fa-file-excel"></i></button>
+                        </a>
+                    </th>
                 </tr>
                 </thead>
                 <tbody>
@@ -47,6 +52,8 @@
                     <tr>
                         <td>${contactMap.key}</td>
                         <td>${contactMap.value}</td>
+                        <td></td>
+                        <td></td>
                     </tr>
                 </c:forEach>
                 </tbody>

@@ -88,7 +88,7 @@ public class HomePageController {
             userService.saveUser(user);
         }
         model.addAttribute("username", user.getFirstName());
-        return "redirect:/mylogin?success";
+        return "redirect:/mylogin";
     }
 
 

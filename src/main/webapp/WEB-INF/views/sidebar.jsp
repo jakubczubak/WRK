@@ -2,7 +2,7 @@
 <ul class="sidebar navbar-nav">
     <li class="nav-item">
         <a class="nav-link" href="/" role="button">
-            <span class="nav-link"><i class="fas fa-brain"></i> DASHBOARD</span>
+            <span class="nav-link"><i class="fas fa-brain"></i> WELCOME</span>
         </a>
     </li>
     <li class="nav-item">

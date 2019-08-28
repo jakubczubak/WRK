@@ -48,7 +48,7 @@ public class PartController {
 
     @GetMapping("/all")
     public String getAllParts(Model model) {
-        List<Part> partList = partRepository.findAll();
+        List<Part> partList = partRepository.findAllByOrderByName();
         model.addAttribute("partList", partList);
         return "partList";
     }

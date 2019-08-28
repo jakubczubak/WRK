@@ -4,10 +4,7 @@ import org.springframework.stereotype.Service;
 import pl.coderslab.app.part.Part;
 import pl.coderslab.app.part.PartRepository;
 
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Service
 public class BrakeCaliperService {
@@ -21,12 +18,15 @@ public class BrakeCaliperService {
 
     public Map<String, Integer> getDefaultMap() {
 
-        List<Part> partList = partRepository.findAll();
+        List<Part> partList = partRepository.findAllByOrderByName();
         Map<String, Integer> partMap = new HashMap<>();
         for (int i = 0; i < partList.size(); i++) {
             partMap.put(partList.get(i).getName(), 0);
         }
-        return partMap;
+
+        TreeMap<String,Integer> sortedMap = new TreeMap<>();
+        sortedMap.putAll(partMap);
+        return sortedMap;
     }
 
 

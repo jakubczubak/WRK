@@ -39,15 +39,6 @@
 
 </div>
 </c:if>
-<c:if test="${param.success != null}">
-
-    </div>
-    <div class="alert alert-success" role="alert">
-
-        Hello ${username}!
-
-    </div>
-</c:if>
 
 <h1><p class="text-success">Log in </p></h1>
 <div class="form-group">

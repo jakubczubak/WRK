@@ -35,4 +35,6 @@ public class WarehouseController {
 
         return "warehouseDetails";
     }
+
+
 }
