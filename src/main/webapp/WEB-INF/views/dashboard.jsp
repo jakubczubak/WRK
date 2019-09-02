@@ -109,8 +109,10 @@
                 <div class="card-header">
                     <i class="fas fa-table"></i>
                     WRK Brakes orders
+                    <a class="float-right" href="/order/add"><button class="btn btn-success"><i class="fas fa-cart-plus"></i></button></a>
                 </div>
                 <div class="card-body">
+
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <thead class="thead-dark">
                         <tr>

@@ -34,6 +34,10 @@ public class ReportController {
             return new ModelAndView(new ExcelPartListReportView(), "partList", map);
         }
 
+        if (type != null && type.equals("pdf")) {
+            return new ModelAndView(new PdfPartListReportView(), "partList", map);
+        }
+
 
 
         return null;

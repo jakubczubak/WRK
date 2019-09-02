@@ -43,7 +43,11 @@
                         <a href="/report/getreport/?type=xls">
                             <button type="button" class="btn btn-primary"><i class="far fa-file-excel"></i></button>
                         </a>
+                        <a href="/report/getreport/?type=pdf">
+                            <button type="button" class="btn btn-danger"><i class="far fa-file-pdf"></i></button>
+                        </a>
                     </th>
+
                 </tr>
                 </thead>
                 <tbody>
