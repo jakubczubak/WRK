@@ -17,12 +17,13 @@ WRK is a training project that help management orders in company which is sellin
 <li>Bootstrap 4</li>
 <li>MySQL</li>
 <li>Maven</li>
+<li>JSP</li>
 </ul>
 
 
 ## Launch
 
-http://wrkbrakes.herokuapp.com/
+
 
 
 
