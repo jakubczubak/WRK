@@ -35,7 +35,7 @@ WRK is a training project that help management orders in company which is sellin
 ![Screenshot from 2019-08-23 16-07-28](https://user-images.githubusercontent.com/45847111/63598958-e2bde800-c5c0-11e9-8eca-974b779a1c50.png)
 ![Screenshot from 2019-08-23 16-11-09](https://user-images.githubusercontent.com/45847111/63598961-e487ab80-c5c0-11e9-9f5f-85ef2b1e9e2d.png)
 ![Screenshot from 2019-08-23 17-06-50](https://user-images.githubusercontent.com/45847111/63602997-f9683d00-c5c8-11e9-8ba9-d38e95d4b7b3.png)
-
+![image](https://user-images.githubusercontent.com/45847111/73555140-57892e00-444d-11ea-870b-9b888d70dfc3.png)
 
 This app is inspired by daily work.
  
