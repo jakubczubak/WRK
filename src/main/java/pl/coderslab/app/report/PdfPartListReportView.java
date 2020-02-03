@@ -18,9 +18,7 @@ public class PdfPartListReportView extends AbstractXlsView {
                                       HttpServletResponse response) throws Exception {
 
         String filename = "wrkPartList.pdf";
-        response.setHeader( "Content-Disposition", "filename=" + filename );
-
-
+        response.setHeader("Content-Disposition", "filename=" + filename);
 
 
         @SuppressWarnings("unchecked")
@@ -33,15 +31,13 @@ public class PdfPartListReportView extends AbstractXlsView {
         pdfPTable.addCell("Quantity");
 
 
-
-
         Iterator<Map.Entry<String, Integer>>
                 iterator = map.entrySet().iterator();
 
         while (iterator.hasNext()) {
 
             Map.Entry entry = iterator.next();
-            pdfPTable.addCell((String)entry.getKey());
+            pdfPTable.addCell((String) entry.getKey());
             int qnty = (Integer) entry.getValue();
             String qntyToString = Integer.toString(qnty);
             pdfPTable.addCell(qntyToString);

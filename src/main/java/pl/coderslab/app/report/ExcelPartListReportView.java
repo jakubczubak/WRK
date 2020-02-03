@@ -17,9 +17,7 @@ public class ExcelPartListReportView extends AbstractXlsView {
 
         String filename = "wrkPartList.xls";
         response.setContentType("text/xml");
-        response.setHeader( "Content-Disposition", "filename=" + filename );
-
-
+        response.setHeader("Content-Disposition", "filename=" + filename);
 
 
         @SuppressWarnings("unchecked")

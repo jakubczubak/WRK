@@ -57,14 +57,14 @@ public class WarehouseService {
         return generalMap;
     }
 
-    public Map<String, Integer> getPartListToBuy(){
-        Map<String,Integer> map = getListAllNeedParts();
-        Iterator<Map.Entry<String,Integer>>
+    public Map<String, Integer> getPartListToBuy() {
+        Map<String, Integer> map = getListAllNeedParts();
+        Iterator<Map.Entry<String, Integer>>
                 iteratot = map.entrySet().iterator();
-        while(iteratot.hasNext()){
+        while (iteratot.hasNext()) {
             Map.Entry entry = iteratot.next();
 
-            if((Integer)entry.getValue()<0){
+            if ((Integer) entry.getValue() < 0) {
                 iteratot.remove();
             }
         }

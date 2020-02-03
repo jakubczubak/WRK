@@ -24,7 +24,7 @@ public class BrakeCaliperService {
             partMap.put(partList.get(i).getName(), 0);
         }
 
-        TreeMap<String,Integer> sortedMap = new TreeMap<>();
+        TreeMap<String, Integer> sortedMap = new TreeMap<>();
         sortedMap.putAll(partMap);
         return sortedMap;
     }

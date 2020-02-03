@@ -39,7 +39,7 @@ public class OrderController {
 
     @PostMapping("/add")
     public String addOrderProcess(@ModelAttribute @Valid Order order, BindingResult result) {
-        if(result.hasErrors()){
+        if (result.hasErrors()) {
             return "addOrder";
         }
         order.setFinish(false);

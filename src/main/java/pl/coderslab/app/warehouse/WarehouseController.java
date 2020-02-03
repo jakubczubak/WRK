@@ -30,7 +30,7 @@ public class WarehouseController {
     }
 
     @GetMapping("/details")
-    public String getDetails(Model model){
+    public String getDetails(Model model) {
         model.addAttribute("partMap", warehouseService.getListAllNeedParts());
 
         return "warehouseDetails";
